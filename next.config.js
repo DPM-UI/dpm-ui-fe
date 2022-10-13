@@ -1,6 +1,3 @@
-const withReactSvg = require("next-react-svg");
-const path = require("path");
-
 module.exports = (phase, { defaultConfig }) => {
     /**
      * @type {import('next').NextConfig}

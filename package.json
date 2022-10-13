@@ -15,8 +15,12 @@
     }
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.5",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@svgr/webpack": "^6.4.0",
     "add": "2.0.6",
+    "framer-motion": "^7.5.3",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "next": "12.3.1",
