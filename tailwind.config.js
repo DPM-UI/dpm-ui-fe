@@ -5,6 +5,28 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    colors: {
+      black: {
+        1: "#000000",
+        2: "#333333"
+      },
+      blue: {
+        1: "#3694A3",
+        2: "#23597B",
+        sky: "#9AF1FF",
+        baby: "#CEF8FF",
+      },
+      green: {
+        1: "#3ACAAF",
+        2: "#257E7E",
+        pastel: "#7AFFE6"
+      },
+      grey: {
+        dark: "#4C4C4C",
+        DEFAULT: "#666666"
+      },
+      "light-cyan": "#F5F9FA",
+    },
     extend: {},
   },
   plugins: [],
