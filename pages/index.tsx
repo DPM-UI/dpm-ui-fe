@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
+import { Header, Body } from "@components";
 
 const Home: NextPage = () => {
-    return <div className="text-9xl text-blue-sky">Hello World!</div>;
+    return (
+        <>
+            <Header preset="h1">Main Header</Header>
+            <Body preset="p1">example</Body>
+        </>
+    );
 };
 
 export default Home;
