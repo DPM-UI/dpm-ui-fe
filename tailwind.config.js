@@ -25,10 +25,11 @@ module.exports = {
       "light-cyan": "#F5F9FA",
       white: "#FFFFFF"
     },
+    container: {
+      center: true,
+    },
     fontFamily: {
-
       "jakarta-sans": ["Plus Jakarta Sans", "sans-serif"],
-
     },
     extend: {},
     screens: {
