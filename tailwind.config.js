@@ -16,13 +16,18 @@ module.exports = {
       green: {
         1: "#3ACAAF",
         2: "#257E7E",
-        pastel: "#7AFFE6"
+        pastel: "B3F8EB"
       },
       grey: {
         dark: "#4C4C4C",
-        DEFAULT: "#666666"
+        DEFAULT: "#66666"
       },
       "light-cyan": "#F5F9FA",
+    },
+    fontFamily: {
+
+      "jakarta-sans": ["Plus Jakarta Sans", "sans-serif"],
+
     },
     extend: {},
     screens: {

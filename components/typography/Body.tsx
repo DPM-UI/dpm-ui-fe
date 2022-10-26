@@ -8,7 +8,7 @@ export const Body = ({ className, children, preset }: BodyProps) => {
     return (
         <p
             // change font later
-            className={`font-futura ${
+            className={`font-jakarta-sans ${
                 preset === "p1"
                     ? "tablet:text-[1.5rem] mobile:text-[1rem]"
                     : preset === "p2"

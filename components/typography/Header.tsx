@@ -8,7 +8,7 @@ export const Header = ({ className, preset, children }: HeaderProps) => {
     return (
         // change font later
         <h1
-            className={`font-futura font-bold ${
+            className={`font-jakarta-sans font-bold ${
                 preset === "h1"
                     ? "desktop:text-[3rem] mobile:text-[1.5rem]"
                     : preset === "h2"

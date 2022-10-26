@@ -4,9 +4,8 @@ import { Header, Body } from "@components";
 const Home: NextPage = () => {
     return (
         <>
-            <Header preset="h4">Hello World!</Header>
+            <Header preset="h1">Main Header</Header>
             <Body preset="p1">example</Body>
-            <div className="text-9xl text-blue-sky">Hello World!</div>
         </>
     );
 };
