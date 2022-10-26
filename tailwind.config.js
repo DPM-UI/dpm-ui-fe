@@ -20,9 +20,10 @@ module.exports = {
       },
       grey: {
         dark: "#4C4C4C",
-        DEFAULT: "#66666"
+        DEFAULT: "#666666"
       },
       "light-cyan": "#F5F9FA",
+      white: "#FFFFFF"
     },
     fontFamily: {
 
