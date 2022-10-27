@@ -19,8 +19,8 @@ export const Footer = () => {
                     <div className="flex flex-col gap-6 text-blue-2">
                         <Header preset="h4">Media Sosial</Header>
                         <div className="flex gap-6">
-                            {SOCIAL_MEDIA.map(({ logo, url }) => (
-                                <Link href={url}>
+                            {SOCIAL_MEDIA.map(({ logo, url }, index: number) => (
+                                <Link href={url} key={index}>
                                     <a>{logo}</a>
                                 </Link>
                             ))}
