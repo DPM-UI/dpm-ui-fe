@@ -9,7 +9,7 @@ export const Navbar = () => {
     const baseRoute = "/" + route.split("/")[1];
 
     return (
-        <div className=" w-full h-20 bg-light-cyan " style={{ zIndex: 9999 }}>
+        <div className=" w-full h-20 bg-light-cyan shadow-lg" style={{ zIndex: 9999 }}>
             <div className="desktop:ml-24 desktop:mr-20 flex  justify-between items-center mobile:mx-4 h-full">
                 <Link href="/">
                     <a>
@@ -19,7 +19,7 @@ export const Navbar = () => {
 
                 <div className="flex items-center gap-14">
                     {NavLinks.map(({ href, label, sub }) => (
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center" key={label}>
                             <Header preset="regular" className="font-bold text-green-2  ">
                                 {sub ? (
                                     <Menu isLazy>
@@ -28,7 +28,7 @@ export const Navbar = () => {
                                         </MenuButton>
                                         <MenuList bg="#F5F9FA" mt="6">
                                             {sub.map(({ href, label }, index: number) => (
-                                                <div>
+                                                <div key={label}>
                                                     <MenuItem>
                                                         <Link href={href}>
                                                             <div className="ml-[5px]">{label}</div>
