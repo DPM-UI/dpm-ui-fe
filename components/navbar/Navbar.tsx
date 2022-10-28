@@ -31,7 +31,11 @@ export const Navbar = () => {
                                                 <div key={label}>
                                                     <MenuItem>
                                                         <Link href={href}>
-                                                            <div className="ml-[5px]">{label}</div>
+                                                            <a>
+                                                                <div className="ml-[5px] hover:text-green-1 transition duration-200 ease-in">
+                                                                    {label}
+                                                                </div>
+                                                            </a>
                                                         </Link>
                                                     </MenuItem>
                                                     {index !== sub.length - 1 && (
@@ -44,9 +48,11 @@ export const Navbar = () => {
                                     </Menu>
                                 ) : (
                                     <Link href={href}>
-                                        <div className="hover:text-green-1 transition duration-200 ease-in">
-                                            {label}
-                                        </div>
+                                        <a>
+                                            <div className="hover:text-green-1 transition duration-200 ease-in">
+                                                {label}
+                                            </div>
+                                        </a>
                                     </Link>
                                 )}
                             </Header>
