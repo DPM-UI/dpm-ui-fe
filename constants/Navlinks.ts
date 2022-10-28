@@ -21,7 +21,7 @@ export const NavLinks: NavigationLink[] = [
         label: "About",
         sub: [
             {
-                href: "/dpm-ui2022",
+                href: "/dpm-ui",
                 label: "DPM UI 2022",
             },
             {
