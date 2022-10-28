@@ -9,7 +9,7 @@ export const Navbar = () => {
     const baseRoute = "/" + route.split("/")[1];
 
     return (
-        <div className=" w-full h-20 bg-light-cyan " style={{ zIndex: 9999 }}>
+        <div className=" w-full h-20 bg-light-cyan shadow-lg" style={{ zIndex: 9999 }}>
             <div className="desktop:ml-24 desktop:mr-20 flex  justify-between items-center mobile:mx-4 h-full">
                 <Link href="/">
                     <a>

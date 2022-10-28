@@ -12,7 +12,6 @@ const Home: NextPage = () => {
             <Button type="outlined">Hello</Button>
             <Header preset="h1">Main Header</Header>
             <Body preset="p1">Hello</Body>
-            <Button type="outlined">Hello</Button>
         </div>
     );
 };
