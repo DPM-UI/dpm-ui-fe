@@ -20,7 +20,7 @@ const Home: NextPage = () => {
                             <span className="font-bold">Dewan Perwakilan Mahasiswa Universitas Indonesia</span> yang
                             selanjutnya disingkat DPM UI adalah lembaga tinggi dalam IKM UI yang memiliki kekuasaan{" "}
                             <span className="font-bold">legislatif</span>. Mengusung semangat{" "}
-                            <span className="font-bold">"Memaknai Keberagaman UI"</span>, DPM UI 2022 berusaha
+                            <span className="font-bold">&quot;Memaknai Keberagaman UI&quot;</span>, DPM UI 2022 berusaha
                             memberikan warna bagi seluruh civitas akademik Universitas Indonesia.
                         </Body>
                     </div>
