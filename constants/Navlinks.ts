@@ -58,8 +58,4 @@ export const NavLinks: NavigationLink[] = [
         href: "/gallery",
         label: "Gallery",
     },
-    {
-        href: "/sign-up",
-        label: "Sign Up",
-    },
 ]

@@ -1,5 +1,5 @@
 import Maharani from "@images/divisi/kewirausahaan/maharani.svg";
-import Syifa from "@images/divisi/kewirausahaan/Syifa.svg";
+import Syifa from "@images/divisi/kewirausahaan/syifa.svg";
 
 export const AnggotaKewirausahaan = [
     {
