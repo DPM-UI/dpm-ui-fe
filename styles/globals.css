@@ -30,4 +30,24 @@
         transform-origin: bottom left;
         transform: scaleX(1);
     }
+
+
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #3ACAAF !important;
+}
+
+.swiper-pagination {
+    position: static !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+
+
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
 }
