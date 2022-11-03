@@ -23,7 +23,9 @@ module.exports = {
         DEFAULT: "#666666"
       },
       "light-cyan": "#F5F9FA",
-      white: "#FFFFFF"
+      white: "#FFFFFF",
+      error: "#EB5757",
+      success: "#3ACAAF"
     },
     container: {
       center: true,
