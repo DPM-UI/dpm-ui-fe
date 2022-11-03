@@ -16,7 +16,7 @@ export const LandingHero = () => {
                         memberikan warna bagi seluruh civitas akademik Universitas Indonesia.
                     </Body>
                 </div>
-                <Button type="primary" className="mt-7">
+                <Button preset="primary" className="mt-7">
                     More
                 </Button>
             </div>

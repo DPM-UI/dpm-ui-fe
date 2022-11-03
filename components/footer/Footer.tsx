@@ -27,7 +27,7 @@ export const Footer = () => {
                         </div>
                         <div>
                             <Header preset="h4" className="text-blue-2 underline underline-offset-2">
-                                <Link href="#">
+                                <Link href="/login">
                                     <a>Login Admin</a>
                                 </Link>
                             </Header>
