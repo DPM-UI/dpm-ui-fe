@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { LandingHero } from "@components";
+import { LandingHero, InputField } from "@components";
 
 const Home: NextPage = () => {
     return (
@@ -8,6 +8,7 @@ const Home: NextPage = () => {
                 style={{ backgroundImage: `url("/assets/images/landing_dpm.jpg")` }}
                 className="bg-cover h-full bg-center"
             ></div>
+            {/* <InputField /> */}
             <LandingHero />
         </div>
     );

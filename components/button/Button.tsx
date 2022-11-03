@@ -7,7 +7,7 @@ type ButtonProps = {
     leftIcon?: React.SVGAttributes<SVGElement>;
     rightIcon?: React.SVGAttributes<SVGElement>;
     noBorder?: boolean;
-    type: "primary" | "outlined" | "disabled";
+    preset: "primary" | "outlined" | "disabled";
 
     children?: React.ReactNode;
     [props: string]: any;
@@ -16,28 +16,26 @@ type ButtonProps = {
 export const Button: React.FC<ButtonProps> = ({
     children,
     className,
-    type,
+    preset,
     padding,
     noBorder,
     leftIcon,
     rightIcon,
-
     ...props
 }) => {
     return (
         <button
             className={`transition-all flex justify-center items-center gap-2 font-bold
-      ${BUTTON_PRESETS[type].text} 
-      ${BUTTON_PRESETS[type].border} 
-      ${noBorder ? "border-0" : BUTTON_PRESETS[type].borderWidth} 
-      ${BUTTON_PRESETS[type].borderColor} 
-      ${BUTTON_PRESETS[type].hover} 
-      ${BUTTON_PRESETS[type].color} 
+      ${BUTTON_PRESETS[preset].text} 
+      ${BUTTON_PRESETS[preset].border} 
+      ${noBorder ? "border-0" : BUTTON_PRESETS[preset].borderWidth} 
+      ${BUTTON_PRESETS[preset].borderColor} 
+      ${BUTTON_PRESETS[preset].hover} 
+      ${BUTTON_PRESETS[preset].color} 
       ${padding ? padding : "desktop:py-4 desktop:px-10 mobile:py-3 mobile:px-6"} 
   
       ${className}`}
             {...props}
-            type="button"
             disabled={Object.keys(BUTTON_PRESETS)[0] == "disabled" ? true : false}
         >
             {leftIcon ? <>{leftIcon}</> : null}
