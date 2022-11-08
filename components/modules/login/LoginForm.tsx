@@ -13,11 +13,12 @@ export const LoginForm = () => {
     const validate = (values: LoginFormModel) => {
         let errors: FormikErrors<LoginFormModel> = {};
         if (!values.username) {
-            errors.username = REQUIRED_ERROR_MSG;
+            errors.username = "The username field is required";
         }
         if (!values.password) {
-            errors.password = REQUIRED_ERROR_MSG;
+            errors.password = "The password field is required";
         }
+        console.log("aa");
         return errors;
     };
     return (
@@ -27,20 +28,20 @@ export const LoginForm = () => {
                     <Form className="mx-20">
                         <InputFieldFormik
                             type="text"
-                            name="Username"
+                            name="username"
                             label="Username"
                             isDisabled={false}
                             required={true}
                         />
                         <InputFieldFormik
                             type="password"
-                            name="Password"
+                            name="password"
                             label="Password"
                             isDisabled={false}
                             required={true}
                             className="mt-2"
                         />
-                        <Button type="submit" preset="primary" className="mx-auto mt-4" disabled>
+                        <Button type="submit" preset="primary" className="mx-auto mt-4">
                             {props.isSubmitting ? "Login..." : "Login"}
                         </Button>
                     </Form>

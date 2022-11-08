@@ -10,6 +10,7 @@ interface Identifiable {
 /** Input Field using formik. See https://formik.org/ */
 export const InputFieldFormik = (props: InputFieldProps & Identifiable) => {
     const [field, meta, helpers] = useField(props.name);
+
     return (
         <InputField
             value={field.value}
@@ -17,6 +18,7 @@ export const InputFieldFormik = (props: InputFieldProps & Identifiable) => {
             onBlur={field.onBlur}
             isError={!!meta.error}
             errorMessage={meta.error}
+            className={props.className}
             {...props}
         />
     );
