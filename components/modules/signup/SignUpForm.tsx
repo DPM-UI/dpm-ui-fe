@@ -11,17 +11,18 @@ export const SignUpForm = () => {
         password: "",
         confirmPassword: "",
     };
-    const REQUIRED_ERROR_MSG = "Harus diisi!";
     const validate = (values: SignUpFormModel) => {
         let errors: FormikErrors<SignUpFormModel> = {};
         if (!values.username) {
-            errors.username = REQUIRED_ERROR_MSG;
+            errors.username = "The username field is required";
         }
         if (!values.password) {
-            errors.password = REQUIRED_ERROR_MSG;
+            errors.password = "The password field is required";
         }
-        if (values.password != values.confirmPassword) {
-            errors.confirmPassword = "Password kamu tidak sama";
+        if (!values.confirmPassword) {
+            errors.confirmPassword = "The confirm password field is required";
+        } else if (values.password != values.confirmPassword) {
+            errors.confirmPassword = "Please make sure your password match.";
         }
         return errors;
     };
@@ -32,14 +33,14 @@ export const SignUpForm = () => {
                     <Form className="mx-20">
                         <InputFieldFormik
                             type="text"
-                            name="Username"
+                            name="username"
                             label="Username"
                             isDisabled={false}
                             required={true}
                         />
                         <InputFieldFormik
                             type="password"
-                            name="Password"
+                            name="password"
                             label="Password"
                             isDisabled={false}
                             required={true}
@@ -47,7 +48,7 @@ export const SignUpForm = () => {
                         />
                         <InputFieldFormik
                             type="password"
-                            name="Password"
+                            name="confirmPassword"
                             label="Retype new password"
                             isDisabled={false}
                             required={true}

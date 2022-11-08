@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { HTMLInputTypeAttribute } from "react";
 import { FormLabel } from "./FormLabel";
+import WarningIcon from "@icons/ic_warning.svg";
 // field contains label & input element
 export type InputFieldProps = {
     className?: string; // className of field element
@@ -37,10 +38,7 @@ export type InputFieldProps = {
 export const InputField = (props: InputFieldProps) => {
     return (
         <FormControl isInvalid={props.isError} className={`text-grey ${props.className}`}>
-            <FormLabel>
-                {props.label}
-                {props.label && props.required && <span className="text-danger-light">*</span>}
-            </FormLabel>
+            <FormLabel>{props.label}</FormLabel>
             <InputGroup>
                 {props.leftIcon && (
                     <InputLeftElement pointerEvents="none">
@@ -54,10 +52,10 @@ export const InputField = (props: InputFieldProps) => {
                     placeholder={props.placeholder}
                     onChange={props.onChange}
                     isDisabled={props.isDisabled}
-                    className={`font-jakarta-sans hover:border-cerulean ${props.innerClassName}`}
-                    style={{ colorScheme: props.dark ? "dark" : "normal" }}
+                    className={`font-jakarta-sans ${props.innerClassName}`}
                     required={props.required}
                     onBlur={props.onBlur}
+                    bg={props.errorMessage ? "#f4e0e3" : ""}
                 />
                 {props.rightIcon && (
                     <InputRightElement pointerEvents="none">
@@ -66,7 +64,11 @@ export const InputField = (props: InputFieldProps) => {
                 )}
             </InputGroup>
 
-            {props.isError && <FormErrorMessage>{props.errorMessage}</FormErrorMessage>}
+            {props.isError && (
+                <FormErrorMessage>
+                    <WarningIcon /> <span className="ml-1">{props.errorMessage}</span>
+                </FormErrorMessage>
+            )}
         </FormControl>
     );
 };
