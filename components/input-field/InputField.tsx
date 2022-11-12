@@ -30,15 +30,17 @@ export type InputFieldProps = {
 
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
-
+    classNameLabel?: string;
     dark?: boolean; // use white font
     required?: boolean;
 };
 
 export const InputField = (props: InputFieldProps) => {
     return (
-        <FormControl isInvalid={props.isError} className={`text-grey ${props.className}`}>
-            <FormLabel>{props.label}</FormLabel>
+        <FormControl isInvalid={props.isError} className={`text-grey  ${props.className}`}>
+            <FormLabel>
+                <span className={`${props.classNameLabel}`}>{props.label}</span>
+            </FormLabel>
             <InputGroup>
                 {props.leftIcon && (
                     <InputLeftElement pointerEvents="none">
