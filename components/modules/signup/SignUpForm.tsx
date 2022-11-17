@@ -1,11 +1,25 @@
 import { InputFieldFormik, Button } from "@components";
 import { Form, Formik, FormikErrors, FormikHelpers } from "formik";
+import { useRouter } from "next/router";
+import axios from "axios";
 type SignUpFormModel = {
     username: string;
     password: string;
     confirmPassword: string;
 };
 export const SignUpForm = () => {
+    const { reload } = useRouter();
+    const register = async (username: string, password: string) => {
+        try {
+            await axios.post("/api/auth/register", {
+                email: username,
+                password: password,
+            });
+            reload();
+        } catch (e: any) {
+            console.log(e.response.data);
+        }
+    };
     const initalValues: SignUpFormModel = {
         username: "",
         password: "",
@@ -26,9 +40,12 @@ export const SignUpForm = () => {
         }
         return errors;
     };
+    const handleSubmit = async (values: SignUpFormModel, helpers: FormikHelpers<SignUpFormModel>) => {
+        register(values.username, values.password);
+    };
     return (
         <div>
-            <Formik initialValues={initalValues} validate={validate} onSubmit={() => console.log("aa")}>
+            <Formik initialValues={initalValues} validate={validate} onSubmit={handleSubmit}>
                 {(props: any) => (
                     <Form className="mx-20">
                         <InputFieldFormik
