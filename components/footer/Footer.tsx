@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = () => {
     return (
         <div>
-            <div className="h-72 bg-light-cyan w-full border-t-[1px] border-[#C0C0C0]" style={{ zIndex: 99999 }}>
+            <div className="h-72 bg-white w-full " style={{ zIndex: 99999 }}>
                 <div className="flex justify-between px-20 py-7">
                     <div className="flex flex-col gap-6 w-80 text-blue-2">
                         <Header preset="h4">Alamat</Header>
