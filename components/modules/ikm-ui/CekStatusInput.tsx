@@ -1,32 +1,44 @@
-import { Header, InputFieldFormik, SelectFieldFormik, Button, ShowDataIKM } from "@components";
+import { Header, InputFieldFormik, SelectFieldFormik, Button, ShowDataIKM, Toast } from "@components";
 import { Form, Formik, FormikErrors } from "formik";
+import { useEffect, useState } from "react";
+import { DataIKM } from "@models";
+import axios from "axios";
 export const CekStatusInput = () => {
+    const [dataIkm, setDataIkm] = useState<DataIKM>();
+    const [dataIkmLoading, setDataIKMLoading] = useState<boolean>(true);
     const initalValues = {
         npm: "",
         faculty: "",
     };
 
+    const errorToast = Toast({
+        preset: "error",
+        message: "Status IKM tidak ditemukan. Pastikan NPM benar dan sesuai dengan fakultas.",
+    });
+
     const FACULTY_OPTIONS = [
-        { label: "Kedokteran", value: "Kedokteran" },
-        { label: "Kedokteran Gigi", value: "Kedokteran Gigi" },
-        { label: "Ilmu Keperawatan", value: "Ilmu Keperawatan" },
-        { label: "Farmasi", value: "Farmasi" },
+        { label: "Kedokteran", value: "FK" },
+        { label: "Kedokteran Gigi", value: "FKG" },
+        { label: "Ilmu Keperawatan", value: "FIK" },
+        { label: "Farmasi", value: "FF" },
         {
             label: "Matematika dan Ilmu Pengetahuan Alam",
-            value: "Matematika dan Ilmu Pengetahuan Alam",
+            value: "FMIPA",
         },
-        { label: "Teknik", value: "Teknik" },
-        { label: "Psikologi", value: "Psikologi" },
-        { label: "Hukum", value: "Hukum" },
-        { label: "Ekonomi dan Bisnis", value: "Ekonomi dan Bisnis" },
-        { label: "Ilmu Pengetahuan Budaya", value: "Ilmu Pengetahuan Budaya" },
-        { label: "Ilmu Komputer", value: "Ilmu Komputer" },
-        { label: "Ilmu Administrasi", value: "Ilmu Administrasi" },
-        { label: "Ilmu Sosial dan Politik", value: "Ilmu Sosial dan Politik" },
-        { label: "Kesehatan Masyarakat", value: "Kesehatan Masyarakat" },
-        { label: "Program Pendidikan Vokasi", value: "Program Pendidikan Vokasi" },
+        { label: "Teknik", value: "FT" },
+        { label: "Psikologi", value: "FPsi" },
+        { label: "Hukum", value: "FH" },
+        { label: "Ekonomi dan Bisnis", value: "FEB" },
+        { label: "Ilmu Pengetahuan Budaya", value: "FIB" },
+        { label: "Ilmu Komputer", value: "Fasilkom" },
+        { label: "Ilmu Administrasi", value: "FIA" },
+        { label: "Ilmu Sosial dan Politik", value: "FISIP" },
+        { label: "Kesehatan Masyarakat", value: "FKM" },
+        { label: "Program Pendidikan Vokasi", value: "Vokasi" },
+        { label: "Sekolah Kajian Stratejik dan Global", value: "SKSG" },
+        { label: "Sekolah Ilmu Lingkungan", value: "SIL" },
     ];
-    const validate = (values: any) => {
+    const validate = (values: { npm: string; faculty: string }) => {
         let errors: FormikErrors<any> = {};
         if (!values.npm) {
             errors.npm = "Masukkan NPM anda";
@@ -36,6 +48,24 @@ export const CekStatusInput = () => {
         }
         return errors;
     };
+
+    const handlerSubmit = (values: { npm: string; faculty: string }) => {
+        const data = {
+            npm: parseInt(values.npm),
+            faculty: values.faculty,
+        };
+
+        axios
+            .get(`/api/ikm-ui/${data.npm}/${data.faculty}`)
+            .then((response) => {
+                setDataIkm(response.data);
+                setDataIKMLoading(false);
+            })
+            // TODO: create handler error
+
+            .catch((error) => errorToast());
+    };
+
     return (
         <div>
             <div className="mt-4">
@@ -44,7 +74,7 @@ export const CekStatusInput = () => {
                 </Header>
             </div>
             <div>
-                <Formik initialValues={initalValues} validate={validate} onSubmit={() => console.log("clicked")}>
+                <Formik initialValues={initalValues} validate={validate} onSubmit={handlerSubmit}>
                     {(props: any) => (
                         <Form className="mt-4">
                             <div className="flex flex-col gap-2 w-1/3">
@@ -73,7 +103,9 @@ export const CekStatusInput = () => {
                 </Formik>
             </div>
             {/* later will be handled, for now using dummy */}
-            <ShowDataIKM data={{ npm: 20212021, major: "Ilmu Komputer", isActive: false }} />
+            {dataIkm ? (
+                <ShowDataIKM data={{ npm: dataIkm.npm, faculty: dataIkm.fakultas, status: dataIkm.status }} />
+            ) : null}
         </div>
     );
 };

@@ -33,7 +33,22 @@ module.exports = {
     fontFamily: {
       "jakarta-sans": ["Plus Jakarta Sans", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        "slide-in-back-center": "slide-in-back-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both"
+      }, keyframes: {
+        "slide-in-back-center": {
+          "0%": {
+            transform: "translateZ(600px)",
+            opacity: "0"
+          },
+          to: {
+            transform: "translateZ(0)",
+            opacity: "1"
+          }
+        }
+      }
+    },
     screens: {
       mobile: "360px",
       tablet: "768px",
