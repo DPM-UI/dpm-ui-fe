@@ -7,22 +7,45 @@ import TiktokIcon from "@icons/ic_tiktok_green_2.svg";
 export const OKK_SOCIAL_MEDIA = [
     {
         logo: <InstagramIcon />,
-        url: "https://instagram.com/dpm_ui",
+        url: "https://instagram.com/okk_ui",
     },
     {
         logo: <LinkedinIcon />,
-        url: "https://www.linkedin.com/company/dpm-ui/",
+        url: "https://www.linkedin.com/company/okkui2022/",
     },
     {
         logo: <LineIcon />,
-        url: "https://line.me/R/ti/p/@isy5595k",
+        url: "https://line.me/R/ti/p/@okkui",
     },
     {
         logo: <YoutubeIcon />,
-        url: "https://www.youtube.com/user/dpmui",
+        url: "https://www.youtube.com/@okkuniversitasindonesia4823",
     },
     {
         logo: <TiktokIcon />,
-        url: "https://www.youtube.com/user/dpmui",
+        url: "https://www.tiktok.com/@okk_ui",
+    },
+];
+
+export const PEMIRA_SOCIAL_MEDIA = [
+    {
+        logo: <InstagramIcon />,
+        url: "https://instagram.com/pemiraikmui",
+    },
+    {
+        logo: <LinkedinIcon />,
+        url: "https://www.linkedin.com/company/okkui2022/",
+    },
+    {
+        logo: <LineIcon />,
+        url: "https://line.me/R/ti/p/@jlp6842",
+    },
+    {
+        logo: <YoutubeIcon />,
+        url: "https://www.youtube.com/@pemiraikmui2293",
+    },
+    {
+        logo: <TiktokIcon />,
+        url: "https://www.tiktok.com/@pemiraikmui",
     },
 ];

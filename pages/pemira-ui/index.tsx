@@ -1,16 +1,12 @@
 import type { NextPage } from "next";
-import { PagesHero, PagesTujuanCard, Body, SocialMediaCard } from "@components";
-import { OKK_SOCIAL_MEDIA } from "@constants";
+import { PagesHero, PagesTujuanCard, Body, SocialMediaCard, Button } from "@components";
+import { PEMIRA_SOCIAL_MEDIA } from "@constants";
 const Pemira_UI: NextPage = () => {
-    const OKKUI_Image = [
-        "/assets/images/okk-ui/okk-ui-1.jpg",
-        "/assets/images/okk-ui/okk-ui-1.jpg",
-        "/assets/images/okk-ui/okk-ui-1.jpg",
-    ];
+    const PEMIRA_UI_IMAGE = ["/assets/images/pemira-ui/pemira_ui_2.png", "/assets/images/pemira-ui/pemira_ui_1.png"];
     return (
         <div className="mt-10 pb-52 mx-20">
             <PagesHero
-                imageUrls={OKKUI_Image}
+                imageUrls={PEMIRA_UI_IMAGE}
                 page="pemira-ui"
                 header="Pemira IKM UI"
                 subHeader="Pemilihan Raya 
@@ -23,7 +19,11 @@ const Pemira_UI: NextPage = () => {
                     bersifat perseorangan.
                 </Body>
             </PagesHero>
-            <SocialMediaCard socialMedia={OKK_SOCIAL_MEDIA} title="Pemira UI" />
+            <SocialMediaCard
+                socialMedia={PEMIRA_SOCIAL_MEDIA}
+                title="Pemira UI"
+                websiteUrl="https://pemira.ui.ac.id/"
+            />
         </div>
     );
 };

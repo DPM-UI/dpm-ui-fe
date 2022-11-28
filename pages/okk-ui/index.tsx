@@ -34,7 +34,7 @@ const OKK_UI: NextPage = () => {
                     </li>
                 </ol>
             </PagesHero>
-            <SocialMediaCard socialMedia={OKK_SOCIAL_MEDIA} title="OKK UI" />
+            <SocialMediaCard socialMedia={OKK_SOCIAL_MEDIA} title="OKK UI" websiteUrl="https://okk.ui.ac.id/" />
         </div>
     );
 };
