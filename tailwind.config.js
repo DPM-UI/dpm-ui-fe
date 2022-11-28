@@ -10,6 +10,7 @@ module.exports = {
       blue: {
         1: "#3694A3",
         2: "#23597B",
+        3: "#2C8EBF",
         sky: "#9AF1FF",
         baby: "#CEF8FF",
       },
