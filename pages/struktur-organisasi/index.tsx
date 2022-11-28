@@ -8,13 +8,6 @@ const StrukturOrganisasi: NextPage = () => {
             <Header preset="h1" className="text-green-2 text-center">
                 Struktur Organisasi
             </Header>
-            {/* <div className="h-[600px] w-full">
-                <div
-                    style={{ backgroundImage: `url("/assets/images/struktur-organisasi.png")` }}
-                    className="bg-cover h-full  bg-center mt-8"
-                ></div>
-            </div> */}
-
             <img src="/assets/images/struktur-organisasi.png" className="w-full h-auto" />
             <Link href="/anggota-perwakilan">
                 <a>
