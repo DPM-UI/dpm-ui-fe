@@ -11,18 +11,18 @@ export default async function handler(
         res.status(405).end()
     }
 
-    const { identifier, password } = req.body
-    console.log(identifier + " " + password)
+    const { email, password } = req.body
+
     try {
         const response = await axios.post(
             `${process.env.NEXT_PUBLIC_API_BE}/doorpathmain/log-in`,
             {
-                identifier,
+                email,
                 password,
             }
         )
-
-        setCookie({ res }, "jwt", response.data.jwt, {
+        const jwt = response.headers["set-cookie"] ? response.headers["set-cookie"][0] : ""
+        setCookie({ res }, "jwt", jwt, {
             httpOnly: true,
             secure: process.env.NODE_ENV !== "development",
             maxAge: 30 * 24 * 60 * 60,
@@ -32,6 +32,6 @@ export default async function handler(
         res.status(200).json(response.data)
     } catch (e: any) {
         console.log(e)
-        res.status(200).json(e.response.data)
+        res.status(e.response.data.statusCode).json(e.response.data)
     }
 }

@@ -1,6 +1,7 @@
 import { InputFieldFormik, Button } from "@components";
 import { Form, Formik, FormikErrors, FormikHelpers } from "formik";
 import { useRouter } from "next/router";
+
 import axios from "axios";
 type SignUpFormModel = {
     username: string;
@@ -8,14 +9,17 @@ type SignUpFormModel = {
     confirmPassword: string;
 };
 export const SignUpForm = () => {
-    const { reload } = useRouter();
+    const router = useRouter();
     const register = async (username: string, password: string) => {
         try {
-            await axios.post("/api/auth/register", {
-                email: username,
-                password: password,
-            });
-            reload();
+            await axios
+                .post("/api/auth/register", {
+                    email: username,
+                    password: password,
+                })
+                .then((res) => {
+                    router.push("/login");
+                });
         } catch (e: any) {
             console.log(e.response.data);
         }
@@ -71,7 +75,8 @@ export const SignUpForm = () => {
                             required={true}
                             className="mt-2"
                         />
-                        <Button type="submit" preset="primary" className="mx-auto mt-4" disabled>
+
+                        <Button type="submit" preset="primary" className="mx-auto mt-4">
                             {props.isSubmitting ? "Creating..." : "Create Account"}
                         </Button>
                     </Form>

@@ -31,7 +31,7 @@ export default async function handler(
 
         res.status(200).json(response.data)
     } catch (e: any) {
-        console.log(e)
-        res.status(400).json(e.response.data)
+        console.log(e.response.data)
+        res.status(e.response.data.statusCode).json(e.response.data)
     }
 }
