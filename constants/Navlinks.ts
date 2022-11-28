@@ -47,8 +47,32 @@ export const NavLinks: NavigationLink[] = [
         ],
     },
     {
-        href: "/ikm-ui",
+        href: "#",
         label: "IKM UI",
+        sub: [
+            {
+                href: "/okk-ui",
+                label: "OKK UI",
+            },
+            {
+                href: "/pemira-ui",
+                label: "Pemira UI",
+            },
+            {
+                href: "/status-ikm",
+                label: "Status IKM UI",
+            },
+
+            {
+                href: "/produk-hukum",
+                label: "Produk Hukum",
+            },
+            {
+                href: "/notula",
+                label: "Notula Publik & LPJ",
+            },
+
+        ],
     },
     {
         href: "/agenda",
