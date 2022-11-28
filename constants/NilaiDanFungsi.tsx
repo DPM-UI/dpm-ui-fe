@@ -34,7 +34,7 @@ export const FUNGSI_DPM = [
     },
     {
         logo: <PengawasanIcon />,
-        title: "Fungsi Pengawasn",
+        title: "Fungsi Pengawasan",
         text: "Pengawasan pelaksanaan UU IKM, RKAT BEM & MWA",
     },
     {

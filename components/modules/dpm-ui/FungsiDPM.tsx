@@ -3,8 +3,8 @@ import { FUNGSI_DPM } from "@constants";
 export const FungsiDPM = () => {
     return (
         <div className="mb-14">
-            <Header preset="h4" className="text-center">
-                Nilai-Nilai DPM UI 2022
+            <Header preset="h3" className="text-center text-blue-2">
+                Fungsi DPM UI 2022
             </Header>
             <div className="flex mt-8 gap-16">
                 {FUNGSI_DPM.map(({ logo, text, title }, index: number) => (
