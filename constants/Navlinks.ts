@@ -74,10 +74,7 @@ export const NavLinks: NavigationLink[] = [
 
         ],
     },
-    {
-        href: "/agenda",
-        label: "Agenda",
-    },
+
     {
         href: "/gallery",
         label: "Gallery",
