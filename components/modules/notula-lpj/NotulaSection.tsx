@@ -29,6 +29,7 @@ export const NotulaSection = ({ notulaData }: NotulaSectionProps) => {
                             berkasUrl={notula.url}
                             isEven={index % 2 == 0}
                             isLoading={false}
+                            key={index}
                         />
                     ))}
                 </div>
