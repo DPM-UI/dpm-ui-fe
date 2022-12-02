@@ -1,4 +1,4 @@
-export type ProdukHukum = {
+export type Berkas = {
     id: number,
     deleted_at: Date
     nama: string

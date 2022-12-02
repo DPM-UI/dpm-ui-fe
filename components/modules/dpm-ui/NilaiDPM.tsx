@@ -9,7 +9,7 @@ export const NilaiDPM = () => {
             <div className="flex mt-8 gap-16">
                 {NILAI_DPM.map(({ logo, text }, index: number) => (
                     <div
-                        className="bg-blue-3 w-40 h-40 rounded-2xl relative hover:scale-105 transition duration-300 ease-in-out "
+                        className="bg-blue-1 w-40 h-40 rounded-2xl relative hover:scale-105 transition duration-300 ease-in-out "
                         key={index}
                     >
                         <div className="flex justify-center mt-7"> {logo}</div>

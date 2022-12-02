@@ -68,16 +68,13 @@ export const NavLinks: NavigationLink[] = [
                 label: "Produk Hukum",
             },
             {
-                href: "/notula",
+                href: "/notula-lpj",
                 label: "Notula Publik & LPJ",
             },
 
         ],
     },
-    {
-        href: "/agenda",
-        label: "Agenda",
-    },
+
     {
         href: "/gallery",
         label: "Gallery",

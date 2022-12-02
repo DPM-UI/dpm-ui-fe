@@ -5,7 +5,7 @@ import Link from "next/link";
 const StrukturOrganisasi: NextPage = () => {
     return (
         <div className="mt-10 pb-52 mx-20">
-            <Header preset="h1" className="text-green-2 text-center">
+            <Header preset="h1" className="text-blue-2 text-center">
                 Struktur Organisasi
             </Header>
             <img src="/assets/images/struktur-organisasi.png" className="w-full h-auto" />

@@ -1,4 +1,5 @@
 export * from "./Anggota"
 export * from "./Division"
 export * from "./DataIKM"
-export * from "./ProdukHukum"
+export * from "./Berkas"
+export * from "./Lpj"

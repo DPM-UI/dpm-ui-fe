@@ -16,7 +16,7 @@ export const PagesHero = ({ header, subHeader, description, imageUrls, page, chi
             {/* TODO: dibikin module aja biar bisa di reuse di pemira */}
             <div className="flex justify-between">
                 <div className="w-[600px]">
-                    <Header preset="h2" className="text-green-2">
+                    <Header preset="h2" className="text-blue-2">
                         {header}
                     </Header>
                     <Header preset="h1" className="text-green-1 mt-2">

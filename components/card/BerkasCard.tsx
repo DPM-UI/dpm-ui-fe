@@ -11,7 +11,7 @@ type BerkasCardProps = {
 export const BerkasCard = ({ title, berkasUrl, isEven, isLoading }: BerkasCardProps) => {
     return (
         <div
-            className={`h-[60px] w-1/2 rounded-lg border border-blue-1 py-2.5 px-4 ${
+            className={`h-[60px] w-1/2 rounded-lg border border-blue-2 py-2.5 px-4 ${
                 isEven ? "bg-white" : "bg-green-pastel/40"
             }`}
         >

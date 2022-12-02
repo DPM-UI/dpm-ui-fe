@@ -14,6 +14,7 @@ module.exports = (phase, { defaultConfig }) => {
 
             return config;
         },
+
     };
     return nextConfig;
 };

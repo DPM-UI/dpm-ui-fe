@@ -12,7 +12,7 @@ export const AnggotaShowcase = ({ arrayAnggota }: AnggotaShowcaseProps) => {
                     <div className="flex flex-col items-center" key={index}>
                         <div className="absolute -top-[77px] scale-[0.9]"> {anggota.image}</div>
                         <div className="flex justify-center gap-2">
-                            <Header preset="h4" className="text-green-2 -bottom-10 absolute flex  ">
+                            <Header preset="h4" className="text-blue-2 -bottom-10 absolute flex  ">
                                 {anggota.position}
                             </Header>
                             <div className="absolute -bottom-24 text-grey">
