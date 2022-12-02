@@ -3,10 +3,10 @@ import { Header, BerkasCard } from "@components";
 import ProdukHukumIllustration from "@images/produk_hukum_illustration.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ProdukHukum } from "@models";
+import { Berkas } from "@models";
 
 const ProdukHukum: NextPage = () => {
-    const [produkHukum, setProdukHukum] = useState<ProdukHukum[]>();
+    const [produkHukum, setProdukHukum] = useState<Berkas[]>();
     const [produkHukumLoading, setProdukHukumLoading] = useState<boolean>(true);
     useEffect(() => {
         axios.get("/api/produk-hukum").then((response) => {
