@@ -1,26 +1,54 @@
-import type { NextPage } from "next";
 import ArrowRight from "@icons/ic_arrow_right.svg";
-import { Header } from "@components/typography";
+import { Header, Footer } from "@components";
 import Link from "next/link";
-const StrukturOrganisasi: NextPage = () => {
+import nookies from "nookies";
+import { NextPageContext } from "next";
+import axios from "axios";
+import { User } from "@models";
+const StrukturOrganisasi = ({ user }: { user: User }) => {
     return (
-        <div className="mt-10 pb-52 mx-20">
-            <Header preset="h1" className="text-blue-2 text-center">
-                Struktur Organisasi
-            </Header>
-            <img src="/assets/images/struktur-organisasi.png" className="w-full h-auto" />
-            <Link href="/anggota-perwakilan">
-                <a>
-                    <div className="flex justify-end  mt-8 gap-2 items-center">
-                        <Header preset="h4" className="text-blue-1">
-                            Anggota Perwakilan
-                        </Header>
-                        <ArrowRight />
-                    </div>
-                </a>
-            </Link>
-        </div>
+        <>
+            <div className="mt-10 pb-52 mx-20">
+                <Header preset="h1" className="text-blue-2 text-center">
+                    Struktur Organisasi
+                </Header>
+                <img src="/assets/images/struktur-organisasi.png" className="w-full h-auto" />
+                <Link href="/anggota-perwakilan">
+                    <a>
+                        <div className="flex justify-end  mt-8 gap-2 items-center">
+                            <Header preset="h4" className="text-blue-1">
+                                Anggota Perwakilan
+                            </Header>
+                            <ArrowRight />
+                        </div>
+                    </a>
+                </Link>
+            </div>
+            <Footer user={user} />
+        </>
     );
 };
+export const getServerSideProps = async (ctx: NextPageContext) => {
+    const cookies = nookies.get(ctx);
+    let user = null;
 
+    if (cookies?.jwt) {
+        try {
+            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BE}/doorpathmain`, {
+                headers: {
+                    Cookie: `${cookies.jwt}`,
+                },
+            });
+            user = data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    return {
+        props: {
+            user,
+        },
+    };
+};
 export default StrukturOrganisasi;

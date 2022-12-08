@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Navbar, Footer } from "@components";
+import { Navbar } from "@components";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -33,8 +33,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div className="bg-light-cyan h-full pt-20">
                 <Component {...pageProps} />
             </div>
-
-            <Footer />
         </ChakraProvider>
     );
 }

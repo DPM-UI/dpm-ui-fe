@@ -1,11 +1,29 @@
 import { InputFieldFormik, Button } from "@components";
 import { Form, Formik, FormikErrors, FormikHelpers } from "formik";
+import { useRouter } from "next/router";
+
+import axios from "axios";
 type SignUpFormModel = {
     username: string;
     password: string;
     confirmPassword: string;
 };
 export const SignUpForm = () => {
+    const router = useRouter();
+    const register = async (username: string, password: string) => {
+        try {
+            await axios
+                .post("/api/auth/register", {
+                    email: username,
+                    password: password,
+                })
+                .then((res) => {
+                    router.push("/login");
+                });
+        } catch (e: any) {
+            console.log(e.response.data);
+        }
+    };
     const initalValues: SignUpFormModel = {
         username: "",
         password: "",
@@ -26,9 +44,12 @@ export const SignUpForm = () => {
         }
         return errors;
     };
+    const handleSubmit = async (values: SignUpFormModel, helpers: FormikHelpers<SignUpFormModel>) => {
+        register(values.username, values.password);
+    };
     return (
         <div>
-            <Formik initialValues={initalValues} validate={validate} onSubmit={() => console.log("aa")}>
+            <Formik initialValues={initalValues} validate={validate} onSubmit={handleSubmit}>
                 {(props: any) => (
                     <Form className="mx-20">
                         <InputFieldFormik
@@ -54,7 +75,8 @@ export const SignUpForm = () => {
                             required={true}
                             className="mt-2"
                         />
-                        <Button type="submit" preset="primary" className="mx-auto mt-4" disabled>
+
+                        <Button type="submit" preset="primary" className="mx-auto mt-4">
                             {props.isSubmitting ? "Creating..." : "Create Account"}
                         </Button>
                     </Form>

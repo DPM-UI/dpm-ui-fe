@@ -6,7 +6,7 @@ import axios from "axios"
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     axios
         .get(
-            `${process.env.NEXT_PUBLIC_API_ROOT}/notula-publik`
+            `${process.env.NEXT_PUBLIC_API_BE}/notula-publik`
         )
         .then((response) => {
 

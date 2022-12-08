@@ -10,7 +10,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     axios
         .get(
-            `${process.env.NEXT_PUBLIC_API_ROOT}/ikm?npm=${slug ? slug[0] : 0}&fakultas=${slug ? slug[1] : ""}`
+            `${process.env.NEXT_PUBLIC_API_BE}/ikm?npm=${slug ? slug[0] : 0}&fakultas=${slug ? slug[1] : ""}`
         )
         .then((response) => {
 
