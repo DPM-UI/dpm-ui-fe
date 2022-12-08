@@ -1,8 +1,21 @@
 import { Header, Body } from "@components";
 import { SOCIAL_MEDIA } from "@constants";
+import { User } from "@models";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/router";
 
-export const Footer = () => {
+type FooterProps = {
+    user: User;
+};
+export const Footer = ({ user }: FooterProps) => {
+    const { reload } = useRouter();
+    const handleLogout = () => {
+        axios.post("/api/auth/logout").then((res) => {
+            reload();
+        });
+    };
+
     return (
         <div>
             <div className="h-72 bg-white w-full " style={{ zIndex: 99999 }}>
@@ -27,9 +40,15 @@ export const Footer = () => {
                         </div>
                         <div>
                             <Header preset="h4" className="text-blue-2 underline underline-offset-2">
-                                <Link href="/login">
-                                    <a>Login Admin</a>
-                                </Link>
+                                {!user ? (
+                                    <Link href="/login">
+                                        <a>Login Admin</a>
+                                    </Link>
+                                ) : (
+                                    <div onClick={handleLogout} className="text-cursor">
+                                        Log out
+                                    </div>
+                                )}
                             </Header>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
 import axios from "axios"
-import { destroyCookie } from "nookies"
+import nookies, { destroyCookie, parseCookies } from "nookies"
 
 export default async function handler(
     req: NextApiRequest,
@@ -15,14 +15,22 @@ export default async function handler(
         path: "/",
     })
 
-    try {
-        const response = await axios.post(
-            `${process.env.NEXT_PUBLIC_API_BE}/doorpathmain/logout`
-        )
-        res.status(200).end()
+    res.status(200).end()
 
-    } catch (e: any) {
-        console.log(e)
-        res.status(500).json(e.response.data)
-    }
+
+    // try {
+    //     const response = await axios.post(
+    //         `${process.env.NEXT_PUBLIC_API_BE}/doorpathmain/log-out`, {
+
+    //         headers: {
+    //             Cookie: ""
+    //         }
+    //     }
+    //     )
+    //     res.status(200).end()
+
+    // } catch (e: any) {
+    //     console.log(e)
+    //     // res.status(500).json(e.response.data)
+    // }
 }
