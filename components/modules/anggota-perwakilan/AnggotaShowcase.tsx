@@ -10,9 +10,9 @@ export const AnggotaShowcase = ({ arrayAnggota }: AnggotaShowcaseProps) => {
             <div className="grid grid-cols-3 bg-gradient-to-br from-[#2C8EBF] to-green-1 h-52 relative rounded-xl">
                 {arrayAnggota.map((anggota: Anggota, index: number) => (
                     <div className="flex flex-col items-center" key={index}>
-                        <div className="absolute -top-[92px]"> {anggota.image}</div>
+                        <div className="absolute -top-[77px] scale-[0.9]"> {anggota.image}</div>
                         <div className="flex justify-center gap-2">
-                            <Header preset="h3" className="text-green-2 -bottom-10 absolute flex  ">
+                            <Header preset="h4" className="text-blue-2 -bottom-10 absolute flex  ">
                                 {anggota.position}
                             </Header>
                             <div className="absolute -bottom-24 text-grey">

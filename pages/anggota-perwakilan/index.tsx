@@ -5,7 +5,7 @@ import { Header } from "@components/typography";
 const AnggotaPerwakilan: NextPage = () => {
     return (
         <div className="mt-10 pb-52">
-            <Header preset="h1" className="text-green-2 text-center">
+            <Header preset="h1" className="text-blue-2 text-center">
                 Anggota Perwakilan
             </Header>
             <div className="flex flex-col gap-60 mt-32 mb-10 mx-20">
