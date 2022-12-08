@@ -11,13 +11,13 @@ export default async function handler(
         res.status(405).end()
     }
 
-    const { email, password } = req.body
+    const { username, password } = req.body
 
     try {
         const response = await axios.post(
             `${process.env.NEXT_PUBLIC_API_BE}/doorpathmain/log-in`,
             {
-                email,
+                username,
                 password,
             }
         )

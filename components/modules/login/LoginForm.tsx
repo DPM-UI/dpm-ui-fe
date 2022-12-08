@@ -27,7 +27,7 @@ export const LoginForm = () => {
     const handleSubmit = async (values: LoginFormModel, helpers: FormikHelpers<LoginFormModel>) => {
         await axios
             .post("/api/auth/login", {
-                email: values.username,
+                username: values.username,
                 password: values.password,
             })
             .then((res) => {
