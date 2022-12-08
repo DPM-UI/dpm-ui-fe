@@ -103,9 +103,7 @@ export const CekStatusInput = () => {
                 </Formik>
             </div>
             {/* later will be handled, for now using dummy */}
-            {dataIkm ? (
-                <ShowDataIKM data={{ npm: dataIkm.npm, faculty: dataIkm.fakultas, status: dataIkm.status }} />
-            ) : null}
+            {dataIkm ? <ShowDataIKM data={dataIkm} /> : null}
         </div>
     );
 };

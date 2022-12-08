@@ -18,19 +18,4 @@ export default async function handler(
     res.status(200).end()
 
 
-    // try {
-    //     const response = await axios.post(
-    //         `${process.env.NEXT_PUBLIC_API_BE}/doorpathmain/log-out`, {
-
-    //         headers: {
-    //             Cookie: ""
-    //         }
-    //     }
-    //     )
-    //     res.status(200).end()
-
-    // } catch (e: any) {
-    //     console.log(e)
-    //     // res.status(500).json(e.response.data)
-    // }
 }

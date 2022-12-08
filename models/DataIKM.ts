@@ -2,6 +2,7 @@ export type DataIKM = {
     id: number,
     npm: number,
     fakultas: string,
-    status: string,
-    nikm: number
+    statusPembinaanUniversitas: string,
+    statusPembinaanFakultas: string,
+    statusIKMUI: string
 }

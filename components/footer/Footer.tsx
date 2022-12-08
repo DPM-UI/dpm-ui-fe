@@ -39,7 +39,7 @@ export const Footer = ({ user }: FooterProps) => {
                             ))}
                         </div>
                         <div>
-                            <Header preset="h4" className="text-blue-2 underline underline-offset-2">
+                            <Header preset="h4" className="text-blue-2 underline underline-offset-2 text-cursor">
                                 {!user ? (
                                     <Link href="/login">
                                         <a>Login Admin</a>
