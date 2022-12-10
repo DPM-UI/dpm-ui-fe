@@ -7,7 +7,7 @@ type ButtonProps = {
     leftIcon?: React.SVGAttributes<SVGElement>;
     rightIcon?: React.SVGAttributes<SVGElement>;
     noBorder?: boolean;
-    preset: "primary" | "outlined" | "disabled";
+    preset: "primary" | "outlined" | "disabled" | "custom";
 
     children?: React.ReactNode;
     [props: string]: any;
@@ -26,6 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
         <button
             className={`transition-all flex justify-center items-center gap-2 font-bold
+   
       ${BUTTON_PRESETS[preset].text} 
       ${BUTTON_PRESETS[preset].border} 
       ${noBorder ? "border-0" : BUTTON_PRESETS[preset].borderWidth} 
