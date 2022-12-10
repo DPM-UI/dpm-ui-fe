@@ -1,7 +1,8 @@
 import { Header, InputFieldFormik, SelectFieldFormik, Button, ShowDataIKM, Toast } from "@components";
 import { Form, Formik, FormikErrors } from "formik";
-import { useEffect, useState } from "react";
-import { DataIKM } from "@models";
+import { useState } from "react";
+import { DataIKM, User } from "@models";
+import { Skeleton } from "@chakra-ui/react";
 import axios from "axios";
 export const CekStatusInput = () => {
     const [dataIkm, setDataIkm] = useState<DataIKM>();
@@ -69,7 +70,7 @@ export const CekStatusInput = () => {
     return (
         <div>
             <div className="mt-4">
-                <Header preset="h2" className="text-green-1 ">
+                <Header preset="h2" className="text-blue-2 ">
                     Cek Status IKM
                 </Header>
             </div>
@@ -102,8 +103,12 @@ export const CekStatusInput = () => {
                     )}
                 </Formik>
             </div>
-            {/* later will be handled, for now using dummy */}
-            {dataIkm ? <ShowDataIKM data={dataIkm} /> : null}
+
+            {dataIkm ? (
+                <Skeleton isLoaded={!dataIkmLoading} className="w-3/4 h-20" rounded="lg">
+                    <ShowDataIKM data={dataIkm} />
+                </Skeleton>
+            ) : null}
         </div>
     );
 };

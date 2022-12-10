@@ -1,4 +1,4 @@
-import { InputFieldFormik, Button } from "@components";
+import { InputFieldFormik, Button, Toast } from "@components";
 import { Form, Formik, FormikErrors, FormikHelpers } from "formik";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -12,7 +12,7 @@ export const LoginForm = () => {
         username: "",
         password: "",
     };
-    const REQUIRED_ERROR_MSG = "Harus diisi!";
+
     const validate = (values: LoginFormModel) => {
         let errors: FormikErrors<LoginFormModel> = {};
         if (!values.username) {
@@ -31,10 +31,19 @@ export const LoginForm = () => {
                 password: values.password,
             })
             .then((res) => {
+                successToast();
                 router.push("/");
             })
-            .catch((e) => console.log(e.response.data));
+            .catch((e) => errorToast());
     };
+    const successToast = Toast({
+        preset: "success",
+        message: "Berhasil login",
+    });
+    const errorToast = Toast({
+        preset: "error",
+        message: "Akun tidak ditemukan. Pastikan username dan password benar",
+    });
     return (
         <div>
             <Formik initialValues={initalValues} validate={validate} onSubmit={handleSubmit}>

@@ -4,12 +4,11 @@ import { NextPageContext } from "next";
 import axios from "axios";
 import { User } from "@models";
 
-const Home = ({ user }: { user: User }) => {
+const statusIkm = ({ user, jwt }: { user: User; jwt: string }) => {
     return (
         <>
-            {" "}
             <div className="mt-10 pb-16 mx-20">
-                <StatusIKMDescription />
+                <StatusIKMDescription user={user} jwt={jwt} />
                 <CekStatusInput />
             </div>
             <Footer user={user} />
@@ -18,6 +17,7 @@ const Home = ({ user }: { user: User }) => {
 };
 export const getServerSideProps = async (ctx: NextPageContext) => {
     const cookies = nookies.get(ctx);
+    const jwt = cookies.jwt ? cookies.jwt : "";
     let user = null;
 
     if (cookies?.jwt) {
@@ -36,7 +36,8 @@ export const getServerSideProps = async (ctx: NextPageContext) => {
     return {
         props: {
             user,
+            jwt,
         },
     };
 };
-export default Home;
+export default statusIkm;
