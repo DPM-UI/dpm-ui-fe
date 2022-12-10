@@ -1,12 +1,12 @@
 import { Header } from "@components";
-import { DataIKM } from "@models";
-
+import { DataIKM, User } from "@models";
+import PencilIcon from "@icons/ic_pencil.svg";
 type ShowDataIKMProps = {
     data: DataIKM;
 };
 export const ShowDataIKM = ({ data }: ShowDataIKMProps) => {
     return (
-        <div className="w-3/4 mt-4 animate-slide-in-back-center">
+        <div className="w-full mt-4 animate-slide-in-back-center">
             <div className="bg-green-2 rounded-lg grid grid-cols-3 pl-5 text-white py-2">
                 <Header preset="h4">NPM</Header>
                 <Header preset="h4">Fakultas</Header>
