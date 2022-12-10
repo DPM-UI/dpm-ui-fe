@@ -36,4 +36,12 @@ export const BUTTON_PRESETS: ButtonPresetProps = {
         text: "text-white",
         borderColor: "border-grey",
     },
+    custom: {
+        border: "rounded-lg",
+        borderWidth: "border-2",
+        color: "",
+        hover: "",
+        text: "text-white",
+        borderColor: "",
+    },
 };

@@ -13,7 +13,6 @@ export const Toast = ({ preset, message }: ToastProps) => {
     const toast = useToast({
         position: "top",
         duration: 6000,
-
         render: ({ onClose }) => {
             return (
                 <Box

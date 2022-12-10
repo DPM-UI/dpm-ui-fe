@@ -1,6 +1,6 @@
 import { Header } from "@components";
 import { DataIKM, User } from "@models";
-import PencilIcon from "@icons/ic_pencil.svg";
+
 type ShowDataIKMProps = {
     data: DataIKM;
 };

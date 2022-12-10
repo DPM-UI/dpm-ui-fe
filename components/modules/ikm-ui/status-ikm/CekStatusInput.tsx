@@ -14,7 +14,7 @@ export const CekStatusInput = () => {
 
     const errorToast = Toast({
         preset: "error",
-        message: "Status IKM tidak ditemukan. Pastikan NPM benar dan sesuai dengan fakultas.",
+        message: "Status IKM tidak ditemukan",
     });
 
     const FACULTY_OPTIONS = [

@@ -1,28 +1,47 @@
-import { Header, BerkasCard, Footer } from "@components";
+import { Header, BerkasCard, Footer, CustomModal, InputFieldFormik } from "@components";
 import ProdukHukumIllustration from "@images/produk_hukum_illustration.svg";
 import { useEffect, useState } from "react";
-
+import { PlusCircleIcon } from "@heroicons/react/solid";
+import { useDisclosure } from "@chakra-ui/react";
 import { Berkas, User } from "@models";
 import nookies from "nookies";
 import { NextPageContext } from "next";
 import axios from "axios";
 
-const ProdukHukum = ({ user }: { user: User }) => {
+const ProdukHukum = ({ user, jwt }: { user: User; jwt: string }) => {
     const [produkHukum, setProdukHukum] = useState<Berkas[]>();
     const [produkHukumLoading, setProdukHukumLoading] = useState<boolean>(true);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
     useEffect(() => {
         axios.get("/api/produk-hukum").then((response) => {
             setProdukHukum(response.data);
             setProdukHukumLoading(false);
         });
-    }, []);
+    }, [produkHukum]);
 
     return (
         <>
             <div className="mt-10 pb-52 mx-20 ">
-                <Header preset="h1" className="text-blue-2 text-center">
-                    Produk Hukum
-                </Header>
+                <div className="flex items-center gap-4 justify-center">
+                    <Header preset="h1" className="text-blue-2 text-center">
+                        Produk Hukum
+                    </Header>
+                    {user ? (
+                        <PlusCircleIcon className="w-10 h-10 fill-green-1 cursor-pointer" onClick={onOpen} />
+                    ) : null}
+                </div>
+                <CustomModal
+                    isOpen={isOpen}
+                    onClose={onClose}
+                    title={"Tambah Produk Hukum"}
+                    productTitle="Judul Produk Hukum"
+                    isAdd={true}
+                    jwt={jwt}
+                    successMessage={"Produk Hukum berhasil ditambahkan"}
+                    target={"produk-hukum"}
+                />
+
                 <div className="flex justify-center flex-col items-center gap-2 mt-8 relative">
                     {produkHukumLoading ? (
                         <>
@@ -32,11 +51,14 @@ const ProdukHukum = ({ user }: { user: User }) => {
                     ) : (
                         produkHukum?.map((produk, index: number) => (
                             <BerkasCard
+                                id={produk.id}
                                 title={produk.nama}
                                 berkasUrl={produk.url}
                                 isEven={index % 2 == 0}
                                 key={index}
                                 isLoading={false}
+                                user={user}
+                                jwt={jwt}
                             />
                         ))
                     )}
@@ -50,6 +72,7 @@ const ProdukHukum = ({ user }: { user: User }) => {
 };
 export const getServerSideProps = async (ctx: NextPageContext) => {
     const cookies = nookies.get(ctx);
+    const jwt = cookies.jwt ? cookies.jwt : "";
     let user = null;
 
     if (cookies?.jwt) {
@@ -68,6 +91,7 @@ export const getServerSideProps = async (ctx: NextPageContext) => {
     return {
         props: {
             user,
+            jwt,
         },
     };
 };
