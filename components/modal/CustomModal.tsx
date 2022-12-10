@@ -66,11 +66,9 @@ export const CustomModal = ({
                 .patch(`/api/${target}/update`, { name: values.judul, link: values.link, jwt: jwt, id: id })
                 .then((res) => {
                     successToast();
-                    console.log(res);
                 })
                 .catch((err) => {
                     errorToast();
-                    console.log(err);
                 });
         }
     };

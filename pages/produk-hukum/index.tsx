@@ -43,25 +43,20 @@ const ProdukHukum = ({ user, jwt }: { user: User; jwt: string }) => {
                 />
 
                 <div className="flex justify-center flex-col items-center gap-2 mt-8 relative">
-                    {produkHukumLoading ? (
-                        <>
-                            <BerkasCard title={""} berkasUrl={""} isEven={true} isLoading={true} />
-                            <BerkasCard title={""} berkasUrl={""} isEven={false} isLoading={true} />
-                        </>
-                    ) : (
-                        produkHukum?.map((produk, index: number) => (
-                            <BerkasCard
-                                id={produk.id}
-                                title={produk.nama}
-                                berkasUrl={produk.url}
-                                isEven={index % 2 == 0}
-                                key={index}
-                                isLoading={false}
-                                user={user}
-                                jwt={jwt}
-                            />
-                        ))
-                    )}
+                    {produkHukum?.map((produk, index: number) => (
+                        <BerkasCard
+                            id={produk.id}
+                            title={produk.nama}
+                            berkasUrl={produk.url}
+                            isEven={index % 2 == 0}
+                            key={index}
+                            isLoading={false}
+                            user={user}
+                            jwt={jwt}
+                            target="produk-hukum"
+                            product="Produk Hukum"
+                        />
+                    ))}
                 </div>
                 <ProdukHukumIllustration className="absolute left-40 top-40" />
                 <ProdukHukumIllustration className="absolute right-40 bottom-80" style={{ transform: `scaleX(-1)` }} />
