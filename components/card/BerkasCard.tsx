@@ -11,9 +11,21 @@ type BerkasCardProps = {
     user?: User;
     jwt?: string;
     id?: number;
+    target: string;
+    product: string;
 };
 
-export const BerkasCard = ({ title, berkasUrl, isEven, isLoading, user, jwt, id }: BerkasCardProps) => {
+export const BerkasCard = ({
+    title,
+    berkasUrl,
+    isEven,
+    isLoading,
+    user,
+    jwt,
+    id,
+    target,
+    product,
+}: BerkasCardProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { isOpen: isOpenDelete, onOpen: onOpenDelete, onClose: onCloseDelete } = useDisclosure();
     return (
@@ -47,18 +59,18 @@ export const BerkasCard = ({ title, berkasUrl, isEven, isLoading, user, jwt, id 
                             title={"Hapus Berkas"}
                             body={"Apakah kamu yakin ingin menghapus berkas ini?"}
                             jwt={jwt ? jwt : ""}
-                            target="produk-hukum"
+                            target={target}
                             id={id}
                         />
                         <CustomModal
                             isOpen={isOpen}
                             onClose={onClose}
-                            title={"Edit Produk Hukum"}
-                            productTitle="Judul Produk Hukum"
+                            title={`Edit ${product}`}
+                            productTitle={`Judul ${product}`}
                             isAdd={false}
                             jwt={jwt ? jwt : ""}
-                            successMessage={"Produk Hukum berhasil ditambahkan"}
-                            target={"produk-hukum"}
+                            successMessage={`${product} berhasil ditambahkan`}
+                            target={target}
                             id={id}
                         />
                     </div>

@@ -3,7 +3,7 @@ import { Form, Formik, FormikErrors } from "formik";
 import { InputFieldFormik, Header, Button, Toast } from "@components";
 import axios from "axios";
 
-type CustomModalProps = {
+type LpjModalProps = {
     isOpen: boolean;
     onClose: () => void;
     title: string;
@@ -15,7 +15,7 @@ type CustomModalProps = {
     id?: number;
 };
 
-export const CustomModal = ({
+export const LpjModal = ({
     isOpen,
     onClose,
     title,
@@ -25,7 +25,7 @@ export const CustomModal = ({
     successMessage,
     target,
     id,
-}: CustomModalProps) => {
+}: LpjModalProps) => {
     const errorToast = Toast({
         preset: "error",
         message: "Terjadi Kesalahan Pada Server",
@@ -38,9 +38,10 @@ export const CustomModal = ({
     const initalValues = {
         judul: "",
         link: "",
+        imageUrl: "",
     };
 
-    const validate = (values: { judul: string; link: string }) => {
+    const validate = (values: { judul: string; link: string; imageUrl: string }) => {
         let errors: FormikErrors<any> = {};
         if (!values.judul) {
             errors.judul = "Masukkan judul!";
@@ -48,13 +49,21 @@ export const CustomModal = ({
         if (!values.link) {
             errors.link = "Masukkan link";
         }
+        if (!values.imageUrl) {
+            errors.imageUrl = "Masukkan image url";
+        }
         return errors;
     };
 
-    const handlerSubmit = (values: { judul: string; link: string }) => {
+    const handlerSubmit = (values: { judul: string; link: string; imageUrl: string }) => {
         if (isAdd) {
             axios
-                .post(`/api/${target}/add`, { name: values.judul, link: values.link, jwt: jwt })
+                .post(`/api/${target}/add`, {
+                    name: values.judul,
+                    link: values.link,
+                    jwt: jwt,
+                    imageUrl: values.imageUrl,
+                })
                 .then((res) => {
                     successToast();
                 })
@@ -63,7 +72,13 @@ export const CustomModal = ({
                 });
         } else {
             axios
-                .patch(`/api/${target}/update`, { name: values.judul, link: values.link, jwt: jwt, id: id })
+                .patch(`/api/${target}/update`, {
+                    name: values.judul,
+                    link: values.link,
+                    jwt: jwt,
+                    id: id,
+                    imageUrl: values.imageUrl,
+                })
                 .then((res) => {
                     successToast();
                 })
@@ -99,6 +114,14 @@ export const CustomModal = ({
                                     name="link"
                                     placeholder="Masukkan link"
                                     label="Link Google Drive"
+                                    required={true}
+                                    classNameLabel="font-bold text-grey-dark"
+                                />
+                                <InputFieldFormik
+                                    type="text"
+                                    name="imageUrl"
+                                    placeholder="Masukkan image url"
+                                    label="Link Gambar"
                                     required={true}
                                     classNameLabel="font-bold text-grey-dark"
                                 />
