@@ -27,7 +27,7 @@ const NotulaLPJ = ({ user, jwt }: { user: User; jwt: string }) => {
                     <Header preset="h1" className="text-blue-2 text-center">
                         Notula & LPJ
                     </Header>
-                    <LpjSection lpjData={lpjData} user={user} />
+                    <LpjSection lpjData={lpjData} user={user} jwt={jwt} />
                 </div>
 
                 <NotulaSection notulaData={notula} user={user} jwt={jwt} />
