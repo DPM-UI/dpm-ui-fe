@@ -11,10 +11,8 @@ const Komisi = ({ user }: { user: User }) => {
                 <Header preset="h2" className="text-blue-2 text-center">
                     Gallery DPM UI
                 </Header>
-                {GALLERY_DATA.map((g) => (
-                    <div className="ml-40">
-                        <PhotosCarousel name={g.name} photoUrls={g.photoUrls} />
-                    </div>
+                {GALLERY_DATA.map((g, index) => (
+                    <PhotosCarousel name={g.name} photoUrls={g.photoUrls} key={index} />
                 ))}
             </div>
             <Footer user={user} />

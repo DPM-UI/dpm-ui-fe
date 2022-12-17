@@ -1,48 +1,36 @@
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/bundle";
-// import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import Slider from "react-slick";
+import { CustomArrowProps, Settings } from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ChevronLeftIcon from "@icons/ic_chevron_left.svg";
 import ChevronRightIcon from "@icons/ic_chevron_right.svg";
-import Slider from "react-slick";
-// SwiperCore.use([Autoplay, Pagination, Navigation]);
-
+import { Header, ImageModal } from "@components";
 type PhotosCarouselProps = {
     name: string;
     photoUrls: string[];
 };
 
 export const PhotosCarousel = ({ name, photoUrls }: PhotosCarouselProps) => {
-    const settings = {
-        dots: true,
-        // infinite: true,
-        speed: 500,
-        slidesToShow: 1,
+    const settings: any = {
+        className: "slider variable-width",
+        infinite: true,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        className: "w-20",
+        variableWidth: true,
+        arrows: true,
+        nextArrow: <ChevronRightIcon />,
+        prevArrow: <ChevronLeftIcon />,
     };
     return (
         <div className="">
-            <div className="relative">
-                {/* <Carousel> */}
-                <Slider {...settings}>
-                    <div>2</div>
-                    <div>3</div>
-                </Slider>
-                {/* </Carousel> */}
-
-                {/* <div
-                    className={`button-previous-${name} absolute desktop:-left-10 desktop:top-[50%]  z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
-                >
-                    <ChevronLeftIcon className="w-full h-full" />
-                </div>
-                <div
-                    className={`button-next-${name} absolute desktop:-right-20  desktop:top-[50%]  z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
-                >
-                    <ChevronRightIcon className="w-full h-full" />
-                </div> */}
-            </div>
+            <Header preset="h4" className="text-grey-dark text-center mt-12">
+                {name}
+            </Header>
+            <Slider {...settings} className="mx-20 mt-4">
+                {photoUrls.map((photoUrl: any, index: number) => (
+                    <ImageModal key={index} url={photoUrl} />
+                ))}
+            </Slider>
         </div>
     );
 };
