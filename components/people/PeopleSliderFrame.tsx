@@ -5,8 +5,6 @@ type PeopleSliderFrameProps = {
 };
 
 export const PeopleSliderFrame = ({ anggota }: PeopleSliderFrameProps) => {
-    const Img = () => anggota.image;
-
     return (
         <div className="w-56 flex flex-col relative ">
             <div className="rounded-full w-44 h-44 bg-gradient-to-b from-[#3ACAAF] to-[#CEF8FF] absolute left-8 top-6 "></div>

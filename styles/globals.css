@@ -47,6 +47,11 @@
 
 }
 
+.swiper-slide {
+    width: 20% !important
+}
+
+
 .swiper-pagination-bullet {
     width: 12px !important;
     height: 12px !important;

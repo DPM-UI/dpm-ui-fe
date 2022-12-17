@@ -5,6 +5,8 @@ export * from "./navbar"
 export * from "./modules"
 export * from "./people"
 export * from "./card"
+export * from "./carousel"
 export * from "./input-field"
 export * from "./toast"
 export * from "./modal"
+

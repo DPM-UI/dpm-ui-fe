@@ -69,7 +69,7 @@ export const BerkasCard = ({
                             productTitle={`Judul ${product}`}
                             isAdd={false}
                             jwt={jwt ? jwt : ""}
-                            successMessage={`${product} berhasil ditambahkan`}
+                            successMessage={`Perubahan berhasil disimpan`}
                             target={target}
                             id={id}
                         />
