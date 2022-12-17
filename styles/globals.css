@@ -47,6 +47,37 @@
 
 }
 
+
+.carousel-photo {
+    width: 100%;
+    height: 100%;
+    /* border-radius: */
+}
+
+.slick-slide {
+    margin: 0 8px;
+}
+
+.slick-list {
+    margin: 0 -8px;
+}
+
+.slick-arrow {
+    height: 24px !important;
+}
+
+.slick-arrow.slick-next {
+
+    position: absolute !important;
+    right: -40px;
+}
+
+.slick-arrow.slick-prev {
+
+    position: absolute !important;
+    left: -30px;
+}
+
 .swiper-pagination-bullet {
     width: 12px !important;
     height: 12px !important;
