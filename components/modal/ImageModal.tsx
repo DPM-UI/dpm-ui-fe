@@ -6,7 +6,7 @@ export const ImageModal = ({ url }: { url: string }) => {
 
     return (
         <div>
-            <img src={url} onClick={() => setIsOpen(true)} className="rounded-lg " />
+            <img src={url} onClick={() => setIsOpen(true)} className="rounded-lg max-w-64 max-h-52  " />
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={() => setIsOpen(false)}>
                     <Transition.Child
