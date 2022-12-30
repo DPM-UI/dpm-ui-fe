@@ -23,8 +23,8 @@ const NotulaLPJ = ({ user, jwt }: { user: User; jwt: string }) => {
     return (
         <>
             <div className="mt-10 ">
-                <div className="mx-20">
-                    <Header preset="h1" className="text-blue-2 text-center">
+                <div className=" ">
+                    <Header preset="h1" className="text-blue-2 text-center mb-16">
                         Notula & LPJ
                     </Header>
                     <LpjSection lpjData={lpjData} user={user} jwt={jwt} />
