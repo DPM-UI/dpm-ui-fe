@@ -1,4 +1,4 @@
-import { AnggotaShowcase, Header, Footer } from "@components";
+import { AnggotaShowcase, Header, Footer, Navigation } from "@components";
 import { ANGGOTA_PERWAKILAN } from "@constants";
 
 import nookies from "nookies";
@@ -9,7 +9,7 @@ const AnggotaPerwakilan = ({ user }: { user: User }) => {
     return (
         <>
             {" "}
-            <div className="mt-10 pb-52">
+            <div className="mt-10 ">
                 <Header preset="h1" className="text-blue-2 text-center">
                     Anggota Perwakilan
                 </Header>
@@ -24,6 +24,10 @@ const AnggotaPerwakilan = ({ user }: { user: User }) => {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div className="mx-20 mt-36 mb-20 flex justify-between">
+                <Navigation target="Struktur Organisasi" url="/struktur-organisasi" isLeft />
+                <Navigation target="Pengurus Inti" url="/pengurus-inti" isLeft={false} />
             </div>
             <Footer user={user} />
         </>

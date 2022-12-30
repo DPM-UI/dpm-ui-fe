@@ -1,4 +1,4 @@
-import { DivisionCard, Footer, Header } from "@components";
+import { DivisionCard, Footer, Header, Navigation } from "@components";
 import { DIVISI } from "@constants";
 import nookies from "nookies";
 import { NextPageContext } from "next";
@@ -21,6 +21,9 @@ const Divisi = ({ user }: { user: User }) => {
                             <DivisionCard komisi={divisi} />
                         </div>
                     ))}
+                </div>
+                <div className="mx-20 mt-10 flex justify-between">
+                    <Navigation target="Komisi DPM UI 2022" url="/komisi" isLeft />
                 </div>
             </div>
             <Footer user={user} />
