@@ -42,7 +42,7 @@ const ProdukHukum = ({ user, jwt }: { user: User; jwt: string }) => {
                     target={"produk-hukum"}
                 />
 
-                <div className="flex justify-center flex-col items-center gap-2 mt-8 relative">
+                <div className="flex justify-center flex-col items-center gap-4 mt-8 relative">
                     {produkHukum?.map((produk, index: number) => (
                         <BerkasCard
                             id={produk.id}
