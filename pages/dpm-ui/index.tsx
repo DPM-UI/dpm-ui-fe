@@ -1,4 +1,4 @@
-import { AboutDPM, NilaiDPM, FungsiDPM, Footer } from "@components";
+import { AboutDPM, NilaiDPM, FungsiDPM, Footer, Navigation } from "@components";
 import nookies from "nookies";
 import { NextPageContext } from "next";
 import axios from "axios";
@@ -11,6 +11,10 @@ const DPMUI = ({ user }: { user: User }) => {
                 <NilaiDPM />
                 <FungsiDPM />
             </div>
+            <div className="mb-14 mx-20">
+                <Navigation target="Struktur Organisasi" url="/struktur-organisasi" isLeft={false} />
+            </div>
+
             <Footer user={user} />
         </>
     );

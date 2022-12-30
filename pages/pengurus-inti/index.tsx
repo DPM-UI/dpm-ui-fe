@@ -1,4 +1,4 @@
-import { AnggotaShowcase, Header, Footer } from "@components";
+import { AnggotaShowcase, Header, Footer, Navigation } from "@components";
 import { PENGURUS_INTI } from "@constants";
 import nookies from "nookies";
 import { NextPageContext } from "next";
@@ -8,7 +8,7 @@ import { User } from "@models";
 const PengurusInti = ({ user }: { user: User }) => {
     return (
         <>
-            <div className="mt-10 pb-52">
+            <div className="mt-10 ">
                 <Header preset="h1" className="text-blue-2 text-center">
                     Pengurus Inti
                 </Header>
@@ -22,6 +22,10 @@ const PengurusInti = ({ user }: { user: User }) => {
                             )}
                         </div>
                     ))}
+                </div>
+                <div className="mx-20 mt-36 mb-20 flex justify-between">
+                    <Navigation target="Anggota Perwakilan" url="/anggota-perwakilan" isLeft />
+                    <Navigation target="Komisi DPM UI 2022" url="/komisi" isLeft={false} />
                 </div>
             </div>
             <Footer user={user} />

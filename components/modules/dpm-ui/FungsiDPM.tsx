@@ -2,7 +2,7 @@ import { Header, Body } from "@components/typography";
 import { FUNGSI_DPM } from "@constants";
 export const FungsiDPM = () => {
     return (
-        <div className="mb-14">
+        <div className="">
             <Header preset="h3" className="text-center text-blue-2">
                 Fungsi DPM UI 2022
             </Header>
