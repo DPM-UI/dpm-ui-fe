@@ -5,7 +5,7 @@ export const AboutDPM = () => {
             <Header preset="h2" className="text-center text-white">
                 DPM UI 2022
             </Header>
-            <Header preset="h4" className="mx-36 text-center text-white mt-2">
+            <Header preset="h4" className="desktop:mx-36 mobile:mx-6 text-center text-white desktop:mt-2 mobile:mt-4">
                 Dewan Perwakilan Mahasiswa Universitas Indonesia yang selanjutnya disingkat DPM UI adalah lembaga tinggi
                 dalam IKM UI yang memiliki kekuasaan legislatif. Mengusung semangat &quot;Memaknai Keberagaman UI&quot;,
                 DPM UI 2022 berusaha memberikan warna bagi seluruh civitas akademik Universitas Indonesia.

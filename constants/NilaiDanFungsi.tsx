@@ -1,22 +1,22 @@
-import EratIcon from "@icons/ic_handshake.svg";
-import AdaptifIcon from "@icons/ic_cycle.svg";
-import AkuntabelIcon from "@icons/ic_hand.svg";
-import LegislasiIcon from "@icons/ic_legislasi.svg";
-import KeuanganIcon from "@icons/ic_keuangan.svg";
-import PengawasanIcon from "@icons/ic_pengawasan.svg";
-import PembinaanIcon from "@icons/ic_pembinaan.svg";
-import SuksesiIcon from "@icons/ic_suksesi.svg";
+import EratIcon from "public/assets/icons/ic_handshake.svg";
+import AdaptifIcon from "public/assets/icons/ic_cycle.svg";
+import AkuntabelIcon from "public/assets/icons/ic_hand.svg";
+import LegislasiIcon from "public/assets/icons/ic_legislasi.svg";
+import KeuanganIcon from "public/assets/icons/ic_keuangan.svg";
+import PengawasanIcon from "public/assets/icons/ic_pengawasan.svg";
+import PembinaanIcon from "public/assets/icons/ic_pembinaan.svg";
+import SuksesiIcon from "public/assets/icons/ic_suksesi.svg";
 export const NILAI_DPM = [
     {
-        logo: <EratIcon />,
+        logo: "/assets/icons/ic_handshake.svg",
         text: "Erat",
     },
     {
-        logo: <AdaptifIcon />,
+        logo: "/assets/icons/ic_cycle.svg",
         text: "Adaptif",
     },
     {
-        logo: <AkuntabelIcon />,
+        logo: "/assets/icons/ic_hand.svg",
         text: "Akuntabel",
     },
 ];
