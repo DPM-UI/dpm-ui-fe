@@ -1,29 +1,28 @@
 import { Anggota } from "@models";
-import { Header } from "@components";
+import { Header, DivisiFrame, DivisiSlider } from "@components";
 type AnggotaShowcaseProps = {
     arrayAnggota: Anggota[];
+    index: number;
 };
 
-export const AnggotaShowcase = ({ arrayAnggota }: AnggotaShowcaseProps) => {
+export const AnggotaShowcase = ({ arrayAnggota, index }: AnggotaShowcaseProps) => {
     return (
         <div>
-            <div className="grid grid-cols-3 bg-gradient-to-br from-[#2C8EBF] to-green-1 h-52 relative rounded-xl">
-                {arrayAnggota.map((anggota: Anggota, index: number) => (
-                    <div className="flex flex-col items-center" key={index}>
-                        <div className="absolute -top-[77px] scale-[0.9]"> {anggota.image}</div>
-                        <div className="flex justify-center gap-2">
-                            <Header preset="h4" className="text-blue-2 -bottom-10 absolute flex  ">
-                                {anggota.position}
-                            </Header>
-                            <div className="absolute -bottom-24 text-grey">
-                                <Header preset="h4">{anggota.name}</Header>
-                                <Header preset="regular" className="text-center">
-                                    {anggota.faculty}
-                                </Header>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+            <div className=" bg-gradient-to-br from-[#2C8EBF] to-green-1 desktop:h-52 mobile:h-36 relative rounded-xl">
+                <div className="desktop:grid mobile:hidden desktop:grid-cols-3">
+                    {arrayAnggota.map((anggota: Anggota, index: number) => (
+                        <DivisiFrame
+                            key={index}
+                            image={anggota.image}
+                            faculty={anggota.faculty}
+                            name={anggota.name}
+                            position={anggota.position}
+                        />
+                    ))}
+                </div>
+                <div className="desktop:hidden mobile:block ">
+                    <DivisiSlider members={arrayAnggota} name={index.toString()} />
+                </div>
             </div>
         </div>
     );

@@ -1,5 +1,4 @@
 import Slider from "react-slick";
-import { CustomArrowProps, Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ChevronLeftIcon from "@icons/ic_chevron_left.svg";
