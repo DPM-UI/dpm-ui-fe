@@ -2,7 +2,7 @@ import React from "react";
 import { TOAST_PRESETS } from "./Toast.presets";
 import { Box, useToast } from "@chakra-ui/react";
 import { Header } from "@components";
-import { XIcon } from "@heroicons/react/outline";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 
 export type ToastProps = {
     preset: "error" | "warning" | "success" | "info";
@@ -30,7 +30,7 @@ export const Toast = ({ preset, message }: ToastProps) => {
                             {message}
                         </Header>
                         <button onClick={onClose}>
-                            <XIcon className="h-6 w-6" />
+                            <XMarkIcon className="h-6 w-6" />
                         </button>
                     </>
                 </Box>

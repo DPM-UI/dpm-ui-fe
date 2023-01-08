@@ -20,7 +20,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@headlessui/react": "^1.7.7",
-    "@heroicons/react": "v1",
+    "@heroicons/react": "v2",
     "@svgr/webpack": "^6.4.0",
     "@types/react-slick": "^0.23.10",
     "add": "2.0.6",

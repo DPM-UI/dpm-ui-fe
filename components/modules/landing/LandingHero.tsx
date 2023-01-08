@@ -2,7 +2,7 @@ import { Header, Body, Button } from "@components";
 export const LandingHero = () => {
     return (
         <div className="h-full absolute w-full top-0 bg-opacity-10">
-            <div className="flex flex-col items-center mt-40">
+            <div className="flex flex-col items-center desktop:mt-40 mobile:mt-16">
                 <div className="flex flex-col  items-center justify-center text-white">
                     <Header preset="h1">DPM</Header>
                     <Header preset="h1">Universitas Indonesia</Header>
