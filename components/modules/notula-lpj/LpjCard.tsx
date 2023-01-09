@@ -1,7 +1,7 @@
 import { Header, DeleteModal, LpjModal } from "@components";
 import { User } from "@models";
 import Link from "next/link";
-import { PencilIcon, TrashIcon } from "@heroicons/react/outline";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useDisclosure } from "@chakra-ui/react";
 
 type LPJCardProps = {
