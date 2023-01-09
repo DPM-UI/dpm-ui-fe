@@ -1,0 +1,7 @@
+export * from "./landing"
+export * from "./dpm-ui"
+export * from "./anggota-perwakilan"
+export * from "./signup"
+export * from "./login"
+export * from "./ikm-ui"
+export * from "./notula-lpj"
