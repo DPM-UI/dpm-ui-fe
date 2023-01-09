@@ -2,12 +2,12 @@ import { Header, Body, Button } from "@components";
 export const LandingHero = () => {
     return (
         <div className="h-full absolute w-full top-0 bg-opacity-10">
-            <div className="flex flex-col items-center mt-40">
+            <div className="flex flex-col items-center desktop:mt-40 mobile:mt-16">
                 <div className="flex flex-col  items-center justify-center text-white">
                     <Header preset="h1">DPM</Header>
                     <Header preset="h1">Universitas Indonesia</Header>
                 </div>
-                <div className="flex justify-center mx-64 mt-8">
+                <div className="flex justify-center desktop:mx-64 mobile:mx-10 desktop:mt-8 mobile:mt-7">
                     <Body preset="p2" className="text-white text-center">
                         <span className="font-bold">Dewan Perwakilan Mahasiswa Universitas Indonesia</span> yang
                         selanjutnya disingkat DPM UI adalah lembaga tinggi dalam IKM UI yang memiliki kekuasaan{" "}
@@ -16,7 +16,7 @@ export const LandingHero = () => {
                         memberikan warna bagi seluruh civitas akademik Universitas Indonesia.
                     </Body>
                 </div>
-                <Button preset="primary" className="mt-7">
+                <Button preset="primary" className="desktop:mt-7 mobile:mt-8">
                     More
                 </Button>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ExclamationIcon, CheckCircleIcon } from "@heroicons/react/outline";
+import { ExclamationTriangleIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 
 type ToastStyleProps = {
     color: string;
@@ -21,7 +21,7 @@ export const TOAST_PRESETS: ToastPresetProps = {
         color: "bg-error  backdrop-blur-sm",
         text: "text-white",
         borderColor: "border-error",
-        leftIcon: <ExclamationIcon className="w-6 h-6"> </ExclamationIcon>,
+        leftIcon: <ExclamationTriangleIcon className="w-6 h-6" />,
     },
 
     success: {

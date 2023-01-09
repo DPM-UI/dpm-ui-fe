@@ -6,12 +6,12 @@ import { User } from "@models";
 const DPMUI = ({ user }: { user: User }) => {
     return (
         <>
-            <div className="flex flex-col gap-12 items-center mt-8 mx-20">
+            <div className="flex flex-col gap-12 items-center mt-8 desktop:mx-20 mobile:mx-5 desktop:mb-0 mobile:mb-10">
                 <AboutDPM />
                 <NilaiDPM />
                 <FungsiDPM />
             </div>
-            <div className="mb-14 mx-20">
+            <div className="desktop:mb-14 mx-20 desktop:block mobile:hidden ">
                 <Navigation target="Struktur Organisasi" url="/struktur-organisasi" isLeft={false} />
             </div>
 

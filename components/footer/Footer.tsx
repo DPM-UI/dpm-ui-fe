@@ -19,8 +19,8 @@ export const Footer = ({ user }: FooterProps) => {
     return (
         <div>
             <div className="h-72 bg-white w-full " style={{ zIndex: 99999 }}>
-                <div className="flex justify-between px-20 py-7">
-                    <div className="flex flex-col gap-6 w-80 text-blue-2">
+                <div className="flex desktop:flex-row mobile:flex-col justify-between desktop:px-20 py-7 desktop:text-left mobile:text-center">
+                    <div className="flex flex-col desktop:gap-6 mobile:gap-2 desktop:w-80 text-blue-2 desktop:mx-0 mobile:mx-5">
                         <Header preset="h4">Alamat</Header>
                         <Body preset="p2">
                             Gedung Pusat Kegiatan Mahasiswa UI (Pusgiwa) Lama Lantai 2 Jl. Prof. Dr. Fuad Hassan,
@@ -30,8 +30,10 @@ export const Footer = ({ user }: FooterProps) => {
                         <Body preset="p2">Email : dpm@ui.ac.id</Body>
                     </div>
                     <div className="flex flex-col gap-6 text-blue-2">
-                        <Header preset="h4">Media Sosial</Header>
-                        <div className="flex gap-6">
+                        <Header preset="h4" className="mobile:hidden desktop:block">
+                            Media Sosial
+                        </Header>
+                        <div className="flex gap-6 desktop:justify-start mobile:justify-center desktop:mt-0 mobile:mt-8">
                             {SOCIAL_MEDIA.map(({ logo, url }, index: number) => (
                                 <Link href={url} key={index}>
                                     <a>{logo}</a>

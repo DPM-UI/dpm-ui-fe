@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <meta property="twitter:image" content="/assets/images/dpm-ui-horizontal.png" />
             </Head>
             <Navbar />
-            <div className="bg-light-cyan h-full pt-20">
+            <div className="bg-light-cyan h-full desktop:pt-20 mobile:pt-12">
                 <Component {...pageProps} />
             </div>
         </ChakraProvider>
