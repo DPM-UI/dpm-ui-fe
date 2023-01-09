@@ -40,7 +40,7 @@ export const StatusIKMDescription = ({ user, jwt }: { user: User; jwt: string })
             <Formik initialValues={initalValues} validate={validate} onSubmit={handlerSubmit}>
                 {(props: any) => (
                     <Form className=" flex items-center mt-4 ">
-                        <div className="flex flex-col gap-2 w-1/3 relative">
+                        <div className="flex flex-col gap-2 desktop:w-1/3 relative">
                             <InputFieldFormik
                                 type="text"
                                 name="link"
@@ -50,7 +50,11 @@ export const StatusIKMDescription = ({ user, jwt }: { user: User; jwt: string })
                                 classNameLabel="font-bold text-grey-dark"
                                 className=""
                             />
-                            <Button preset="primary" className="mt-8 absolute -right-24" padding="py-1.5 px-4">
+                            <Button
+                                preset="primary"
+                                className="desktop:mt-8 mobile:mt-9 absolute -right-24"
+                                padding="py-1.5 px-4"
+                            >
                                 Submit
                             </Button>
                         </div>
@@ -60,11 +64,11 @@ export const StatusIKMDescription = ({ user, jwt }: { user: User; jwt: string })
         </div>
     ) : (
         <div>
-            <Header preset="h1" className="text-blue-2">
+            <Header preset="h1" className="text-blue-2 desktop:text-left mobile:text-center">
                 Status IKM UI
             </Header>
             <div className="flex mt-4">
-                <div className="w-[70%] text-justify">
+                <div className="desktop:w-[70%] text-justify">
                     <Header preset="regular" className="text-grey-dark">
                         Informasi tentang Status iKM UI. Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since
@@ -84,7 +88,7 @@ export const StatusIKMDescription = ({ user, jwt }: { user: User; jwt: string })
                         software like Aldus PageMaker including versions of Lorem Ipsum.
                     </Header>
                 </div>
-                <IKMImage />
+                <IKMImage className="desktop:block mobile:hidden" />
             </div>
         </div>
     );
