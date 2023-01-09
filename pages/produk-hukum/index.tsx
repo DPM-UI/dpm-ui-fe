@@ -1,7 +1,7 @@
 import { Header, BerkasCard, Footer, CustomModal, InputFieldFormik } from "@components";
 import ProdukHukumIllustration from "@images/produk_hukum_illustration.svg";
 import { useEffect, useState } from "react";
-import { PlusCircleIcon } from "@heroicons/react/solid";
+import { PlusCircleIcon } from "@heroicons/react/20/solid";
 import { useDisclosure } from "@chakra-ui/react";
 import { Berkas, User } from "@models";
 import nookies from "nookies";

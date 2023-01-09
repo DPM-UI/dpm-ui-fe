@@ -1,7 +1,7 @@
 import { BerkasCard, CustomModal } from "@components";
 import { Header } from "@components";
 import { Berkas, User } from "@models";
-import { PlusCircleIcon } from "@heroicons/react/solid";
+import { PlusCircleIcon } from "@heroicons/react/20/solid";
 import { useDisclosure } from "@chakra-ui/react";
 
 type NotulaSectionProps = {

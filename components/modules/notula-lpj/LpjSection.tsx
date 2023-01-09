@@ -2,7 +2,7 @@ import { useState } from "react";
 import { LPJ, User } from "@models";
 import { useDisclosure } from "@chakra-ui/react";
 import { Header, LpjCard, LpjModal } from "@components";
-import { PlusCircleIcon } from "@heroicons/react/solid";
+import { PlusCircleIcon } from "@heroicons/react/20/solid";
 type LpjSectionProps = {
     lpjData?: LPJ[];
     user: User;
