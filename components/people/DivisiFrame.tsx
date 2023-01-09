@@ -7,7 +7,7 @@ type DivisiFrameProps = {
 };
 export const DivisiFrame = ({ image, position, name, faculty }: DivisiFrameProps) => {
     return (
-        <div className="flex flex-col items-center desktop:h-auto mobile:h-40 " style={{ zIndex: 100 }}>
+        <div className="flex flex-col items-center desktop:h-auto mobile:h-20 ">
             <div className="absolute desktop:-top-[77px] mobile:-top-[31px] desktop:scale-[0.9] mobile:scale-[0.6]">
                 <img src={image} className="" />
             </div>

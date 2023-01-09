@@ -75,7 +75,7 @@ export const Navbar = () => {
                     </div>
                 </div>
                 {isNavOpen && (
-                    <div className="h-screen w-full bg-light-cyan absolute inset-0 mt-12 " style={{ zIndex: 9999 }}>
+                    <div className="h-screen w-full bg-light-cyan absolute inset-0 mt-12 " style={{ zIndex: 9999999 }}>
                         <div className="mt-4 flex flex-col gap-2">
                             {NavLinks.map(({ href, label, sub }) => (
                                 <>

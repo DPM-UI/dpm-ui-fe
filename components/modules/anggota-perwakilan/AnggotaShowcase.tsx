@@ -20,7 +20,7 @@ export const AnggotaShowcase = ({ arrayAnggota, index }: AnggotaShowcaseProps) =
                         />
                     ))}
                 </div>
-                <div className="desktop:hidden mobile:block ">
+                <div className="desktop:hidden mobile:relative mobile:-top-2.5">
                     <DivisiSlider members={arrayAnggota} name={index.toString()} />
                 </div>
             </div>
