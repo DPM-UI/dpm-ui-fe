@@ -78,7 +78,7 @@ export const CekStatusInput = () => {
                 <Formik initialValues={initalValues} validate={validate} onSubmit={handlerSubmit}>
                     {(props: any) => (
                         <Form className="mt-4">
-                            <div className="flex flex-col gap-2 w-1/3">
+                            <div className="flex flex-col gap-2 desktop:w-1/3">
                                 <InputFieldFormik
                                     type="number"
                                     name="npm"
@@ -105,7 +105,7 @@ export const CekStatusInput = () => {
             </div>
 
             {dataIkm ? (
-                <Skeleton isLoaded={!dataIkmLoading} className="w-3/4 h-20" rounded="lg">
+                <Skeleton isLoaded={!dataIkmLoading} className="desktop:w-3/4 h-20" rounded="lg">
                     <ShowDataIKM data={dataIkm} />
                 </Skeleton>
             ) : null}

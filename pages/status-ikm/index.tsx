@@ -7,7 +7,7 @@ import { User } from "@models";
 const statusIkm = ({ user, jwt }: { user: User; jwt: string }) => {
     return (
         <>
-            <div className="mt-10 pb-16 mx-20">
+            <div className="mt-10 pb-16 desktop:mx-20 mobile:mx-5">
                 <StatusIKMDescription user={user} jwt={jwt} />
                 <CekStatusInput />
             </div>

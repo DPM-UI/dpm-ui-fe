@@ -9,7 +9,7 @@ const Pemira_UI = ({ user }: { user: User }) => {
     return (
         <>
             {" "}
-            <div className="mt-10 pb-52 mx-20">
+            <div className="mt-10 desktop:pb-52 mobile:pb-24 desktop:mx-20 mobile:mx-10">
                 <PagesHero
                     imageUrls={PEMIRA_UI_IMAGE}
                     page="pemira-ui"

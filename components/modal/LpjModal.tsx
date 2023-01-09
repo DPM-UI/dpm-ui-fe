@@ -90,7 +90,7 @@ export const LpjModal = ({
     return (
         <Modal isOpen={isOpen} onClose={onClose} size="lg">
             <ModalOverlay />
-            <ModalContent>
+            <ModalContent marginTop={20} marginX={5}>
                 <ModalCloseButton />{" "}
                 <ModalBody>
                     <Header preset="h4" className="text-center text-blue-2 mt-8">
