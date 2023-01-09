@@ -12,7 +12,7 @@ export const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
     return (
-        <div className=" w-full desktop:h-20 mobile:h-12 bg-light-cyan shadow-md absolute top-0" style={{ zIndex: 10 }}>
+        <div className=" w-full desktop:h-20 mobile:h-12 bg-light-cyan shadow-md fixed top-0" style={{ zIndex: 10 }}>
             <div className="desktop:ml-24 desktop:mr-20 flex  justify-between items-center desktop:mx-4 mobile:mr-6 h-full  ">
                 <Link href="/">
                     <a>
@@ -75,7 +75,7 @@ export const Navbar = () => {
                     </div>
                 </div>
                 {isNavOpen && (
-                    <div className="h-screen bg-light-cyan absolute inset-0 mt-12 " style={{ zIndex: 9999 }}>
+                    <div className="h-screen w-full bg-light-cyan absolute inset-0 mt-12 " style={{ zIndex: 9999 }}>
                         <div className="mt-4 flex flex-col gap-2">
                             {NavLinks.map(({ href, label, sub }) => (
                                 <>

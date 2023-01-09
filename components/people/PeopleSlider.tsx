@@ -32,13 +32,13 @@ export const PeopleSlider = ({ members, name }: PeopleSliderProps) => {
                 ))}
             </Swiper>
             <div
-                className={`button-previous-${name} absolute desktop:left-0 desktop:-bottom-2 mobile:bottom-8 mobile:left-3 z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
+                className={`button-previous-${name} absolute desktop:left-0 desktop:-bottom-2 mobile:bottom-8 mobile:left-3  flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
             >
                 <ChevronLeftIcon className="w-full h-full" />
             </div>
 
             <div
-                className={`button-next-${name} absolute desktop:-right-10  desktop:-bottom-2 mobile:bottom-8 mobile:right-0  z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
+                className={`button-next-${name} absolute desktop:-right-10  desktop:-bottom-2 mobile:bottom-8 mobile:right-0   flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
             >
                 <ChevronRightIcon className="w-full h-full" />
             </div>

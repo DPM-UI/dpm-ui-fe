@@ -2,7 +2,7 @@ import { Header, CustomModal, DeleteModal } from "@components";
 import Link from "next/link";
 import { Skeleton, useDisclosure } from "@chakra-ui/react";
 import { User } from "@models";
-import { PencilIcon, TrashIcon } from "@heroicons/react/outline";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 type BerkasCardProps = {
     title: string;
     berkasUrl: string;
