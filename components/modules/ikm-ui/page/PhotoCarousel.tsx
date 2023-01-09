@@ -14,7 +14,7 @@ type PhotoCarouselProps = {
 };
 export const PhotoCarousel = ({ page, imageUrls }: PhotoCarouselProps) => {
     return (
-        <div className="relative w-[632px] h-[500px]">
+        <div className="relative desktop:w-[632px] desktop:h-[500px]">
             <Swiper
                 className="catalog-carousel"
                 pagination={{
@@ -32,13 +32,13 @@ export const PhotoCarousel = ({ page, imageUrls }: PhotoCarouselProps) => {
                 ))}
             </Swiper>
             <div
-                className={`button-previous-${page} absolute desktop:left-[40%] desktop:-bottom-9  z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
+                className={`button-previous-${page} absolute desktop:left-[40%] desktop:-bottom-9 mobile:-bottom-8 mobile:left-24 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
             >
                 <ChevronLeftIcon className="w-full h-full" />
             </div>
 
             <div
-                className={`button-next-${page} absolute desktop:right-[34%]  desktop:-bottom-9  z-50 flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
+                className={`button-next-${page} absolute desktop:right-[34%]  desktop:-bottom-9 mobile:-bottom-8 mobile:right-[84px] flex items-center mobile:w-6 tablet:w-10 desktop:w-12 cursor-pointer`}
             >
                 <ChevronRightIcon className="w-full h-full" />
             </div>

@@ -13,7 +13,7 @@ const OKK_UI = ({ user }: { user: User }) => {
     ];
     return (
         <>
-            <div className="mt-10 pb-52 mx-20">
+            <div className="mt-10 desktop:pb-52 mobile:pb-24 desktop:mx-20 mobile:mx-10">
                 <PagesHero
                     imageUrls={OKKUI_Image}
                     page="okk-ui"
@@ -23,7 +23,7 @@ const OKK_UI = ({ user }: { user: User }) => {
                     description="OKK UI atau Orientasi Kehidupan Kampus Universitas Indonesia merupakan sebuah kegiatan yang dilakukan setiap tahunnya guna membekali mahasiswa dalam kegiatan kampusnya nanti. Proses pembekalan ini menjadi masa untuk mahasiswa beradaptasi dengan lingkungan barunya."
                 >
                     {" "}
-                    <ol className="list-decimal mx-6 mt-4">
+                    <ol className="list-decimal desktop:text-lg mobile:text-xs mobile:mx-4 desktop:mx-6 mt-4">
                         <li>
                             <Body preset="p2" className="text-grey">
                                 Memperkenalkan IKM UI sebagai <span className="font-bold">wadah bersama</span> mahasiswa
