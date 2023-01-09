@@ -12,8 +12,12 @@ type NotulaSectionProps = {
 export const NotulaSection = ({ notulaData, user, jwt }: NotulaSectionProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
-        <div className={` ${notulaData ? (notulaData.length > 5 ? "h-full" : "h-[80vh]") : ""} pb-52 relative`}>
-            <div className="pt-14">
+        <div
+            className={` ${
+                notulaData ? (notulaData.length > 5 ? "h-full" : "desktop:h-[80vh]") : ""
+            } desktop:pb-52 mobile:pb-24 relative`}
+        >
+            <div className="pt-14 desktop:mx-0 mobile:mx-7">
                 <div className="relative">
                     <div className="flex gap-4 justify-center items-center">
                         <Header preset="h2" className="text-blue-2 text-center">
@@ -25,7 +29,7 @@ export const NotulaSection = ({ notulaData, user, jwt }: NotulaSectionProps) => 
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center mt-8 gap-4 relative">
+                <div className="flex flex-col items-center mt-8 gap-4 relative ">
                     {notulaData?.map((notula, index) => (
                         <BerkasCard
                             title={notula.nama}

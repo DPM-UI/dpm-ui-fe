@@ -30,7 +30,7 @@ export const BerkasCard = ({
     const { isOpen: isOpenDelete, onOpen: onOpenDelete, onClose: onCloseDelete } = useDisclosure();
     return (
         <div
-            className={`h-[60px] w-1/2 rounded-lg border border-blue-2 py-2.5 px-4 ${
+            className={`h-[60px] desktop:w-1/2 mobile:w-full rounded-lg border border-blue-2 py-2.5 px-4 ${
                 isEven ? "bg-white" : "bg-green-pastel/40"
             }`}
         >
@@ -39,7 +39,7 @@ export const BerkasCard = ({
                     <Header preset="regular" className="text-blue-2 font-bold">
                         {title}
                     </Header>
-                    <div className="flex gap-4">
+                    <div className="flex desktop:gap-4 mobile:gap-2">
                         <Link href={berkasUrl}>
                             <a>
                                 <Header preset="regular" className="text-green-1 font-black underline">
@@ -49,8 +49,14 @@ export const BerkasCard = ({
                         </Link>
                         {user ? (
                             <>
-                                <PencilIcon className="w-6 h-6 stroke-green-1 cursor-pointer" onClick={onOpen} />
-                                <TrashIcon className="w-6 h-6 stroke-green-1 cursor-pointer" onClick={onOpenDelete} />
+                                <PencilIcon
+                                    className="desktop:w-6 desktop:h-6 mobile:w-5 mobile:h-5 stroke-green-1 cursor-pointer"
+                                    onClick={onOpen}
+                                />
+                                <TrashIcon
+                                    className="desktop:w-6 desktop:h-6 mobile:w-5 mobile:h-5 stroke-green-1 cursor-pointer"
+                                    onClick={onOpenDelete}
+                                />
                             </>
                         ) : null}
                         <DeleteModal

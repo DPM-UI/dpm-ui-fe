@@ -20,7 +20,7 @@ export const DeleteModal = ({ isOpen, onClose, title, body, target, jwt, id }: D
     return (
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
             <ModalOverlay />
-            <ModalContent>
+            <ModalContent marginX={5}>
                 <ModalCloseButton />{" "}
                 <ModalBody>
                     <Header preset="h4" className="text-center text-blue-2 mt-8">

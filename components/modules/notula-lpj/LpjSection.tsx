@@ -31,7 +31,7 @@ export const LpjSection = ({ lpjData, user, jwt }: LpjSectionProps) => {
             </div>
 
             <div
-                className={`mt-8 flex justify-center gap-2 flex-wrap ${
+                className={`mt-8 flex justify-center desktop:gap-2 mobile:gap-8 flex-wrap desktop:flex-row mobile:flex-col ${
                     lpjData ? (lpjData.length > 3 ? "grid-rows-2" : "grid-rows-1") : ""
                 }`}
             >

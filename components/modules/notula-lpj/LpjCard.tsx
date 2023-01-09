@@ -17,9 +17,9 @@ export const LpjCard = ({ nama, imageUrl, url, user, jwt, id }: LPJCardProps) =>
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { isOpen: isOpenDelete, onOpen: onOpenDelete, onClose: onCloseDelete } = useDisclosure();
     return (
-        <div className="p-6 border border-blue-1 rounded-lg bg-white h-52 w-[380px]">
+        <div className="p-6 border border-blue-1 rounded-lg bg-white h-52 desktop:w-[380px] mobile:w-full">
             <div className="flex gap-4 relative">
-                <div className="w-[120px] ">
+                <div className="desktop:w-[120px] mobile:w-[80px] ">
                     <img src={imageUrl} className="w-full h-[160px] rounded-[6px]" />
                 </div>
 

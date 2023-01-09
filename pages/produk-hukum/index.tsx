@@ -22,13 +22,16 @@ const ProdukHukum = ({ user, jwt }: { user: User; jwt: string }) => {
 
     return (
         <>
-            <div className="mt-10 pb-52 mx-20 ">
+            <div className="mt-10 desktop:pb-52 mobile:pb-24 desktop:mx-20 mobile:mx-7 ">
                 <div className="flex items-center gap-4 justify-center">
                     <Header preset="h1" className="text-blue-2 text-center">
                         Produk Hukum
                     </Header>
                     {user ? (
-                        <PlusCircleIcon className="w-10 h-10 fill-green-1 cursor-pointer" onClick={onOpen} />
+                        <PlusCircleIcon
+                            className="desktop:w-10 desktop:h-10 mobile:w-7 mobile:h-7 fill-green-1 cursor-pointer"
+                            onClick={onOpen}
+                        />
                     ) : null}
                 </div>
                 <CustomModal
@@ -58,8 +61,13 @@ const ProdukHukum = ({ user, jwt }: { user: User; jwt: string }) => {
                         />
                     ))}
                 </div>
-                <ProdukHukumIllustration className="absolute left-40 top-40" />
-                <ProdukHukumIllustration className="absolute right-40 bottom-80" style={{ transform: `scaleX(-1)` }} />
+                <div className="desktop:block mobile:hidden">
+                    <ProdukHukumIllustration className="absolute left-40 top-40" />
+                    <ProdukHukumIllustration
+                        className="absolute right-40 bottom-80"
+                        style={{ transform: `scaleX(-1)` }}
+                    />
+                </div>
             </div>
             <Footer user={user} />
         </>
