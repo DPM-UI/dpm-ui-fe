@@ -14,14 +14,14 @@ const Komisi = ({ user }: { user: User }) => {
                         Komisi DPM UI 2022
                     </Header>
                 </div>
-                <div className="mt-10 flex flex-col gap-16 mx-32">
+                <div className="mt-10 flex flex-col gap-16 desktop:mx-32 mobile:mx-10">
                     {KOMISI.map((komisi, index: number) => (
                         <div key={index}>
                             <DivisionCard komisi={komisi} />
                         </div>
                     ))}
                 </div>
-                <div className="mx-20 mt-10 flex justify-between">
+                <div className="mx-20 mt-10 desktop:flex mobile:hidden justify-between">
                     <Navigation target="Pengurus Inti" url="/pengurus-inti" isLeft />
                     <Navigation target="Divisi DPM UI 2022" url="/divisi" isLeft={false} />
                 </div>
