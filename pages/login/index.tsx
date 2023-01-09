@@ -9,7 +9,7 @@ const Login = ({ user }: { user: User }) => {
     return (
         <>
             {" "}
-            <div className="mt-10 pb-52 h-screen">
+            <div className="mt-10 desktop:pb-52 mobile:pb-24 desktop:h-screen">
                 <Header preset="h2" className="text-center text-green-2">
                     Selamat Datang Kembali!
                 </Header>
@@ -24,8 +24,10 @@ const Login = ({ user }: { user: User }) => {
                         </span>
                     </Header>
                 </div>
-                <LoginImage className="absolute left-20" />
-                <LoginImage className="absolute right-20" style={{ transform: `scaleX(-1)` }} />
+                <div className="desktop:block mobile:hidden">
+                    <LoginImage className="absolute left-20" />
+                    <LoginImage className="absolute right-20" style={{ transform: `scaleX(-1)` }} />
+                </div>
             </div>
             <Footer user={user} />
         </>

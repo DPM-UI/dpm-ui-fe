@@ -8,15 +8,17 @@ import { User } from "@models";
 const SignUp = ({ user }: { user: User }) => {
     return (
         <>
-            <div className="mt-10 pb-52 h-screen">
+            <div className="mt-10 desktop:pb-52 mobile:pb-24 desktop:h-screen">
                 <Header preset="h2" className="text-center text-green-2">
                     Sign Up
                 </Header>
                 <div className="mt-8">
                     <SignUpForm />
                 </div>
-                <SignUpImage className="absolute left-20" />
-                <SignUpImage className="absolute right-20" style={{ transform: `scaleX(-1)` }} />
+                <div className="desktop:block mobile:hidden">
+                    <SignUpImage className="absolute left-20" />
+                    <SignUpImage className="absolute right-20" style={{ transform: `scaleX(-1)` }} />
+                </div>
             </div>
             <Footer user={user} />
         </>
