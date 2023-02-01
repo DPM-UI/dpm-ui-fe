@@ -1,8 +1,4 @@
 import { Anggota } from "@models";
-import Abiyan from "@images/pengurus-inti/abiyan.svg";
-import Alivanza from "@images/pengurus-inti/alivanza.svg";
-import Edward from "@images/pengurus-inti/edward_hamonangan.svg";
-import Nabila from "@images/pengurus-inti/nabila_balqish.svg";
 
 export const PENGURUS_INTI: Anggota[] = [
     {
@@ -24,7 +20,7 @@ export const PENGURUS_INTI: Anggota[] = [
         image: "assets/images/pengurus-inti/alivanza.png",
     },
     {
-        position: "Sekretaris Jenderal",
+        position: "Wakil Sekretaris Jenderal",
         name: "Nabila Balqish Wijayanti",
         faculty: "Vokasi 2020",
         image: "assets/images/pengurus-inti/nabila_balqish.png",
