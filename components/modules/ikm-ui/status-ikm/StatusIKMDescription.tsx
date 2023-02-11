@@ -70,22 +70,15 @@ export const StatusIKMDescription = ({ user, jwt }: { user: User; jwt: string })
             <div className="flex mt-4">
                 <div className="desktop:w-[70%] text-justify">
                     <Header preset="regular" className="text-grey-dark">
-                        Informasi tentang Status iKM UI. Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                        of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Status IKM UI merupakan status keanggotaan Ikatan Keluarga Mahasiswa Universitas Indonesia yang
+                        terdiri dari anggota AKTIF dan anggota BIASA
                     </Header>
                     <Header preset="regular" className="text-grey-dark mt-10">
-                        Informasi tentang Status iKM UI. Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                        of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Cara mendapat status AKTIF ada di kewajiban Anggota IKM UI yang tertuang di Pasal 12 UU No. 14
+                        Tahun 2016
+                        <br></br>1. Menaati dan melaksanakan UUD IKM UI dan aturan-aturan lain yang berlaku di IKM UI
+                        <br></br>2. Menaati dan melaksanakan Kode Etik IKM UI<br></br>3. Menjaga nama baik IKM UI
+                        <br></br>4. Mengikuti Pembinaan Anggota IKM UI.
                     </Header>
                 </div>
                 <IKMImage className="desktop:block mobile:hidden" />
